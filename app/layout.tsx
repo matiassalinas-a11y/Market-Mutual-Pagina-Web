@@ -7,8 +7,8 @@ import './globals.css'
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
-  title: 'Market Mutual | Tu minimercado online',
-  description: 'Armá tu pedido online y coordiná la entrega con Market Mutual.',
+  title: 'Market Mutual | Comprá online',
+  description: 'Armá tu pedido online en Market Mutual y coordiná la entrega por WhatsApp.',
   generator: 'v0.app',
   icons: {
     icon: [

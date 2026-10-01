@@ -10,6 +10,7 @@ import { Footer } from '@/components/market/footer'
 import { OrderReview } from '@/components/market/order-review'
 import { OrderSummary } from '@/components/market/order-summary'
 import { useCart } from '@/components/market/cart-store'
+import { generateOrderNumber } from '@/lib/order'
 import type { CheckoutData } from '@/lib/checkout'
 
 export default function CheckoutPage() {
@@ -17,6 +18,7 @@ export default function CheckoutPage() {
   const [cartOpen, setCartOpen] = useState(false)
   const [reviewOpen, setReviewOpen] = useState(false)
   const [reviewData, setReviewData] = useState<CheckoutData | null>(null)
+  const [orderNumber, setOrderNumber] = useState<string | null>(null)
 
   if (!ready) {
     return (
@@ -24,6 +26,14 @@ export default function CheckoutPage() {
         <p className="text-sm text-slate-500">Cargando tu pedido…</p>
       </main>
     )
+  }
+
+  const handleReview = (data: CheckoutData) => {
+    // El número de pedido se genera al entrar a la revisión por primera vez y
+    // se mantiene estable mientras no se reinicie el flujo (ej. salir del checkout).
+    if (!orderNumber) setOrderNumber(generateOrderNumber())
+    setReviewData(data)
+    setReviewOpen(true)
   }
 
   return (
@@ -50,14 +60,14 @@ export default function CheckoutPage() {
         </section>
       ) : (
         <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-2 lg:px-8">
-          <CheckoutForm onReview={(data) => { setReviewData(data); setReviewOpen(true) }} />
+          <CheckoutForm onReview={handleReview} />
           <OrderSummary />
         </section>
       )}
 
       <Footer />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
-      {reviewOpen && reviewData && <OrderReview data={reviewData} onEdit={() => setReviewOpen(false)} />}
+      {reviewOpen && reviewData && orderNumber && <OrderReview orderNumber={orderNumber} data={reviewData} onEdit={() => setReviewOpen(false)} />}
     </main>
   )
 }
