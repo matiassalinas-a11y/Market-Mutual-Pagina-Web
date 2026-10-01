@@ -3,3 +3,7 @@ pmOnFail: ignore
 minimumReleaseAgeExclude:
   - '@next/*'
   - next
+
+# Dependencias permitidas para ejecutar sus scripts de build (política de supply-chain)
+allowBuilds:
+  unrs-resolver: true
