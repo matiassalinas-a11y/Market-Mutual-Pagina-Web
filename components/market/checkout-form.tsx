@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/components/market/cart-store'
+import { NeighborhoodCombobox } from '@/components/market/neighborhood-combobox'
 import {
   deliveryMinimum,
   EMPTY_CHECKOUT,
@@ -13,7 +14,6 @@ import {
 import type { CheckoutData, CheckoutErrors, CheckoutField } from '@/lib/checkout'
 import {
   findNeighborhood,
-  NEIGHBORHOODS,
   OTHER_NEIGHBORHOOD,
 } from '@/lib/delivery-neighborhoods'
 import { formatMoney } from '@/lib/utils'
@@ -105,13 +105,7 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
 
         <div className="flex flex-col gap-1">
           <label htmlFor="checkout-barrio" className={labelClass}>Barrio <span className="text-red-600">*</span></label>
-          <select id="checkout-barrio" value={data.barrio} onChange={(event) => selectNeighborhood(event.target.value)} className={inputClass} autoComplete="address-level3">
-            <option value="">Seleccioná tu barrio</option>
-            {NEIGHBORHOODS.map((neighborhood) => (
-              <option key={neighborhood.name} value={neighborhood.name}>{neighborhood.name}</option>
-            ))}
-            <option value={OTHER_NEIGHBORHOOD}>{OTHER_NEIGHBORHOOD}</option>
-          </select>
+          <NeighborhoodCombobox value={data.barrio} onChange={selectNeighborhood} hasError={Boolean(errors.barrio)} />
           {errors.barrio && <p className="text-xs font-medium text-red-600">{errors.barrio}</p>}
         </div>
 
