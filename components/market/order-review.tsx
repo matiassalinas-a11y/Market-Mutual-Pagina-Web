@@ -6,8 +6,9 @@ import { AlertCircle, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/components/market/cart-store'
 import { deliveryMinimum } from '@/lib/checkout'
+import { deliveryZoneForNeighborhood } from '@/lib/delivery-neighborhoods'
 import { buildWhatsAppMessage, buildWhatsAppUrl } from '@/lib/order'
-import type { CheckoutData, DeliveryZone } from '@/lib/checkout'
+import type { CheckoutData } from '@/lib/checkout'
 import { formatMoney } from '@/lib/utils'
 
 type OrderReviewProps = {
@@ -19,7 +20,7 @@ type OrderReviewProps = {
 export function OrderReview({ orderNumber, data, onEdit }: OrderReviewProps) {
   const { cart, cartItems, subtotal, cartCount } = useCart()
   const [whatsAppFeedback, setWhatsAppFeedback] = useState<'missing' | 'opening' | null>(null)
-  const zone = data.zone as DeliveryZone
+  const zone = deliveryZoneForNeighborhood(data.barrio)
 
   if (!zone) return null
 

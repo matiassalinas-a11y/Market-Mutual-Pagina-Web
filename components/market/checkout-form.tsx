@@ -10,7 +10,12 @@ import {
   missingToMinimum,
   validateCheckout,
 } from '@/lib/checkout'
-import type { CheckoutData, CheckoutErrors, CheckoutField, DeliveryZone } from '@/lib/checkout'
+import type { CheckoutData, CheckoutErrors, CheckoutField } from '@/lib/checkout'
+import {
+  findNeighborhood,
+  NEIGHBORHOODS,
+  OTHER_NEIGHBORHOOD,
+} from '@/lib/delivery-neighborhoods'
 import { formatMoney } from '@/lib/utils'
 
 type CheckoutFormProps = {
@@ -33,7 +38,9 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
   const [data, setData] = useState<CheckoutData>(EMPTY_CHECKOUT)
   const [errors, setErrors] = useState<CheckoutErrors>({})
 
-  const zone = data.zone as DeliveryZone | ''
+  const selectedNeighborhood = findNeighborhood(data.barrio)
+  const zone = selectedNeighborhood?.zone ?? ''
+  const needsZoneConfirmation = data.barrio === OTHER_NEIGHBORHOOD
   const belowMinimum = zone !== '' && subtotal < deliveryMinimum(zone)
   const amountMissing = zone !== '' ? missingToMinimum(zone, subtotal) : 0
   const canReview = subtotal > 0 && !belowMinimum && isCheckoutValid(data)
@@ -48,6 +55,21 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
         return next
       })
     }
+  }
+
+  const selectNeighborhood = (barrio: string) => {
+    const neighborhood = findNeighborhood(barrio)
+    setData((current) => ({
+      ...current,
+      barrio,
+      zone: neighborhood?.zone ?? '',
+    }))
+    setErrors((current) => {
+      const next = { ...current }
+      delete next.barrio
+      delete next.zone
+      return next
+    })
   }
 
   const handleReview = () => {
@@ -83,25 +105,19 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
 
         <div className="flex flex-col gap-1">
           <label htmlFor="checkout-barrio" className={labelClass}>Barrio <span className="text-red-600">*</span></label>
-          <input id="checkout-barrio" value={data.barrio} onChange={(event) => setField('barrio', event.target.value)} className={inputClass} placeholder="Ej. Bella Vista" />
+          <select id="checkout-barrio" value={data.barrio} onChange={(event) => selectNeighborhood(event.target.value)} className={inputClass} autoComplete="address-level3">
+            <option value="">Seleccioná tu barrio</option>
+            {NEIGHBORHOODS.map((neighborhood) => (
+              <option key={neighborhood.name} value={neighborhood.name}>{neighborhood.name}</option>
+            ))}
+            <option value={OTHER_NEIGHBORHOOD}>{OTHER_NEIGHBORHOOD}</option>
+          </select>
           {errors.barrio && <p className="text-xs font-medium text-red-600">{errors.barrio}</p>}
         </div>
 
-        <fieldset className="flex flex-col gap-1">
-          <legend className={labelClass}>Zona de entrega <span className="text-red-600">*</span></legend>
-          <div className="flex gap-2">
-            {(['Norte', 'Sur'] as DeliveryZone[]).map((option) => (
-              <label key={option} className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border px-3 py-2.5 text-sm font-semibold transition">
-                <input type="radio" name="zone" value={option} checked={data.zone === option} onChange={() => setField('zone', option)} className="accent-[#1456a0]" />
-                {option}
-              </label>
-            ))}
-          </div>
-          {errors.zone && <p className="text-xs font-medium text-red-600">{errors.zone}</p>}
-        </fieldset>
-
         {zone !== '' && (
           <div className={`rounded-xl border px-3 py-3 text-sm ${belowMinimum ? 'border-red-200 bg-red-50 text-[#c02929]' : 'border-green-200 bg-green-50 text-[#2e8b5b]'}`}>
+            <p>Zona de entrega: <strong>{zone}</strong></p>
             <p>Compra mínima para envío: <strong>{formatMoney(deliveryMinimum(zone))}</strong></p>
             {belowMinimum ? (
               <p className="mt-1 text-xs">Te faltan <strong>{formatMoney(amountMissing)}</strong> para alcanzar el mínimo de envío.</p>
@@ -110,6 +126,13 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
             )}
           </div>
         )}
+
+        {needsZoneConfirmation && (
+          <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm font-medium text-[#7a5900]" role="status">
+            Consultanos para confirmar la zona y el mínimo de envío.
+          </div>
+        )}
+        {errors.zone && !needsZoneConfirmation && <p className="text-xs font-medium text-red-600">{errors.zone}</p>}
 
         <div className="flex flex-col gap-1">
           <label htmlFor="checkout-reference" className={labelClass}>Referencia del domicilio <span className="text-xs text-slate-400">(opcional)</span></label>

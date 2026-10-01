@@ -1,6 +1,7 @@
 import { formatMoney } from '@/lib/utils'
 import { MARKET_CONFIG } from '@/lib/market-config'
-import type { CheckoutData, DeliveryZone } from '@/lib/checkout'
+import type { CheckoutData } from '@/lib/checkout'
+import { deliveryZoneForNeighborhood } from '@/lib/delivery-neighborhoods'
 import type { Product } from '@/lib/market-data'
 
 export type OrderLine = {
@@ -38,7 +39,10 @@ export function buildWhatsAppMessage(options: {
   subtotal: number
 }): string {
   const { orderNumber, data, items, subtotal } = options
-  const zone = data.zone as DeliveryZone
+  const zone = deliveryZoneForNeighborhood(data.barrio)
+  if (!zone) {
+    throw new Error('No se puede generar el pedido sin una zona derivada del barrio.')
+  }
 
   const numero = `\n\nN° de pedido: ${orderNumber}`
   const cliente = `\n\nCliente: ${data.name}\nTeléfono: ${data.phone}`

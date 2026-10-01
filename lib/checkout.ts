@@ -1,4 +1,10 @@
-export type DeliveryZone = 'Norte' | 'Sur'
+import {
+  deliveryZoneForNeighborhood,
+  OTHER_NEIGHBORHOOD,
+} from '@/lib/delivery-neighborhoods'
+import type { DeliveryZone } from '@/lib/delivery-neighborhoods'
+
+export type { DeliveryZone } from '@/lib/delivery-neighborhoods'
 
 export type CheckoutData = {
   name: string
@@ -51,8 +57,11 @@ export function validateCheckout(data: CheckoutData): CheckoutErrors {
     errors.barrio = 'El barrio es obligatorio.'
   }
 
-  if (data.zone !== 'Norte' && data.zone !== 'Sur') {
-    errors.zone = 'Elegí la zona de entrega.'
+  const derivedZone = deliveryZoneForNeighborhood(data.barrio)
+  if (data.barrio === OTHER_NEIGHBORHOOD) {
+    errors.zone = 'Consultanos para confirmar la zona y el mínimo de envío.'
+  } else if (!derivedZone || data.zone !== derivedZone) {
+    errors.zone = 'Seleccioná un barrio disponible para determinar la zona de entrega.'
   }
 
   return errors
