@@ -11,12 +11,13 @@ import { Hero } from '@/components/market/hero'
 import { HowToBuySection } from '@/components/market/how-to-buy-section'
 import { OffersSection } from '@/components/market/offers-section'
 import { ProductSection } from '@/components/market/product-section'
+import { useCart } from '@/components/market/cart-store'
 import { products } from '@/lib/market-data'
 import type { Product } from '@/lib/market-data'
 
 export default function Page() {
+  const { cartCount, ready, addToCart } = useCart()
   const [query, setQuery] = useState('')
-  const [cart, setCart] = useState<Record<number, number>>({})
   const [cartOpen, setCartOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [category, setCategory] = useState('Todos')
@@ -26,17 +27,6 @@ export default function Page() {
     const matchesCategory = category === 'Todos' || product.category === category
     return matchesQuery && matchesCategory
   }), [query, category])
-
-  const cartItems = products.filter((product) => cart[product.id])
-  const cartCount = Object.values(cart).reduce((sum, value) => sum + value, 0)
-  const total = cartItems.reduce((sum, product) => sum + product.price * cart[product.id], 0)
-
-  const addToCart = (id: number) => setCart((current) => ({ ...current, [id]: (current[id] || 0) + 1 }))
-  const updateCart = (id: number, amount: number) => setCart((current) => {
-    const next = { ...current, [id]: Math.max(0, (current[id] || 0) + amount) }
-    if (!next[id]) delete next[id]
-    return next
-  })
 
   const addToCartAndOpen = (product: Product) => {
     addToCart(product.id)
@@ -56,6 +46,7 @@ export default function Page() {
         menuOpen={menuOpen}
         onToggleMenu={() => setMenuOpen(!menuOpen)}
         cartCount={cartCount}
+        cartReady={ready}
         onOpenCart={() => setCartOpen(true)}
       />
       <Hero />
@@ -66,7 +57,7 @@ export default function Page() {
       <HowToBuySection />
       <DeliverySection />
       <Footer />
-      <CartDrawer open={cartOpen} cart={cart} cartItems={cartItems} cartCount={cartCount} total={total} onUpdate={updateCart} onClose={() => setCartOpen(false)} />
+      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </main>
   )
 }

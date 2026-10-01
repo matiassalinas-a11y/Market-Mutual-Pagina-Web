@@ -8,6 +8,7 @@ type HeaderProps = {
   onQueryChange: (value: string) => void
   menuOpen: boolean
   onToggleMenu: () => void
+  cartReady: boolean
   cartCount: number
   onOpenCart: () => void
 }
@@ -17,6 +18,7 @@ export function Header({
   onQueryChange,
   menuOpen,
   onToggleMenu,
+  cartReady,
   cartCount,
   onOpenCart,
 }: HeaderProps) {
@@ -34,7 +36,7 @@ export function Header({
           </nav>
           <div className="ml-auto flex items-center gap-2">
             <div className="hidden h-10 w-56 items-center gap-2 rounded-xl bg-slate-100 px-3 md:flex"><Search className="size-4 text-slate-400" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400" placeholder="¿Qué estás buscando?" aria-label="Buscar productos" /></div>
-            <Button variant="ghost" size="icon" className="relative rounded-xl text-[#12355f]" onClick={onOpenCart} aria-label="Abrir carrito"><ShoppingBag />{cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#ee6b4d] text-[10px] font-bold text-white">{cartCount}</span>}</Button>
+            <Button variant="ghost" size="icon" className="relative rounded-xl text-[#12355f]" onClick={onOpenCart} aria-label="Abrir carrito"><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#ee6b4d] text-[10px] font-bold text-white">{cartCount}</span>}</Button>
             <Button variant="ghost" size="icon" className="lg:hidden" onClick={onToggleMenu} aria-label="Abrir menú">{menuOpen ? <X /> : <Menu />}</Button>
           </div>
         </div>

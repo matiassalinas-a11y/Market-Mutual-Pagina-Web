@@ -1,31 +1,27 @@
 'use client'
 
-import { ArrowRight, Minus, Plus, ShoppingBag, X } from 'lucide-react'
+import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { formatMoney } from '@/lib/utils'
-import type { Product } from '@/lib/market-data'
+import { useCart } from '@/components/market/cart-store'
 
 type CartDrawerProps = {
   open: boolean
-  cart: Record<number, number>
-  cartItems: Product[]
-  cartCount: number
-  total: number
-  onUpdate: (id: number, amount: number) => void
   onClose: () => void
 }
 
-export function CartDrawer({
-  open,
-  cart,
-  cartItems,
-  cartCount,
-  total,
-  onUpdate,
-  onClose,
-}: CartDrawerProps) {
+export function CartDrawer({ open, onClose }: CartDrawerProps) {
+  const router = useRouter()
+  const { cart, cartItems, cartCount, subtotal, updateQuantity, removeFromCart } = useCart()
+
   if (!open) return null
+
+  const goToCheckout = () => {
+    onClose()
+    router.push('/checkout')
+  }
 
   return (
     <div className="fixed inset-0 z-50">
@@ -47,12 +43,15 @@ export function CartDrawer({
                     <p className="truncate text-sm font-bold text-[#16385f]">{product.name}</p>
                     <p className="mt-1 text-sm font-semibold text-[#1456a0]">{formatMoney(product.price)}</p>
                     <div className="mt-2 flex items-center gap-2">
-                      <button onClick={() => onUpdate(product.id, -1)} className="flex size-7 items-center justify-center rounded-md bg-slate-100" aria-label="Disminuir cantidad"><Minus className="size-3" /></button>
+                      <button onClick={() => updateQuantity(product.id, cart[product.id] - 1)} className="flex size-7 items-center justify-center rounded-md bg-slate-100" aria-label="Disminuir cantidad"><Minus className="size-3" /></button>
                       <span className="w-4 text-center text-sm font-bold">{cart[product.id]}</span>
-                      <button onClick={() => onUpdate(product.id, 1)} className="flex size-7 items-center justify-center rounded-md bg-slate-100" aria-label="Aumentar cantidad"><Plus className="size-3" /></button>
+                      <button onClick={() => updateQuantity(product.id, cart[product.id] + 1)} className="flex size-7 items-center justify-center rounded-md bg-slate-100" aria-label="Aumentar cantidad"><Plus className="size-3" /></button>
                     </div>
                   </div>
-                  <p className="text-sm font-bold text-[#12355f]">{formatMoney(product.price * cart[product.id])}</p>
+                  <div className="flex flex-col items-center gap-2">
+                    <p className="text-sm font-bold text-[#12355f]">{formatMoney(product.price * cart[product.id])}</p>
+                    <button onClick={() => removeFromCart(product.id)} className="flex size-7 items-center justify-center rounded-md bg-slate-100 text-[#c02929] hover:bg-red-100" aria-label={`Eliminar ${product.name}`}><Trash2 className="size-3" /></button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -60,9 +59,9 @@ export function CartDrawer({
         </div>
         {cartItems.length > 0 && (
           <div className="border-t border-slate-200 pt-5">
-            <div className="flex items-center justify-between text-sm text-slate-500"><span>Total estimado</span><span className="text-2xl font-bold text-[#12355f]">{formatMoney(total)}</span></div>
-            <p className="mt-2 text-xs leading-5 text-slate-400">El precio final y los beneficios se confirmarán al procesar tu pedido.</p>
-            <Button className="mt-5 w-full rounded-xl bg-[#1456a0] py-6 hover:bg-[#0d4381]">Continuar pedido <ArrowRight data-icon="inline-end" /></Button>
+            <div className="flex items-center justify-between text-sm text-slate-500"><span>Subtotal</span><span className="text-2xl font-bold text-[#12355f]">{formatMoney(subtotal)}</span></div>
+            <p className="mt-2 text-xs leading-5 text-slate-400">Los beneficios correspondientes se verificarán al confirmar el pedido.</p>
+            <Button className="mt-5 w-full rounded-xl bg-[#1456a0] py-6 hover:bg-[#0d4381]" onClick={goToCheckout}>Continuar pedido <ArrowRight data-icon="inline-end" /></Button>
           </div>
         )}
       </aside>

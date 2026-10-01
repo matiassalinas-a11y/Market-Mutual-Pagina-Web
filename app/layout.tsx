@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import { Poppins } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
+import { CartProvider } from '@/components/market/cart-store'
 import './globals.css'
 
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-poppins' })
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${poppins.variable} antialiased`}>
-        {children}
+        <CartProvider>{children}</CartProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
