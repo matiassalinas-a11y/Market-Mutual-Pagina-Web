@@ -1,20 +1,27 @@
-import { ArrowRight, BadgePercent } from 'lucide-react'
+'use client'
 
-export function OffersSection() {
+import { BadgePercent } from 'lucide-react'
+import { ProductCard } from '@/components/market/product-card'
+import type { Product } from '@/lib/market-data'
+
+type OffersSectionProps = {
+  products: Product[]
+  onAdd: (product: Product) => void
+}
+
+export function OffersSection({ products, onAdd }: OffersSectionProps) {
+  if (products.length === 0) return null
+
   return (
-    <section id="ofertas" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-      <div className="overflow-hidden rounded-[2rem] bg-[#123b6b] p-7 text-white md:p-12">
-        <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs font-bold text-[#bde0fb]"><BadgePercent className="size-4" /> Ofertas de la semana</div>
-            <h2 className="max-w-lg text-3xl font-bold tracking-tight md:text-4xl">Más ahorro para acompañar tu semana.</h2>
-            <p className="mt-4 max-w-md leading-7 text-blue-100/75">Encontrá precios especiales en productos seleccionados y aprovechá tus beneficios.</p>
-            <a href="#productos" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-bold text-[#123b6b]">Ver ofertas <ArrowRight className="size-4" /></a>
-          </div>
-          <div className="hidden items-center gap-3 md:flex">
-            <div className="rotate-[-6deg] rounded-2xl bg-[#f8d8c9] p-4 text-[#9c503b] shadow-xl"><p className="text-xs font-bold">-15%</p><p className="mt-2 text-3xl font-black">Pizza</p></div>
-            <div className="translate-y-5 rotate-[7deg] rounded-2xl bg-[#d9eddb] p-4 text-[#347047] shadow-xl"><p className="text-xs font-bold">-10%</p><p className="mt-2 text-3xl font-black">Leche</p></div>
-          </div>
+    <section id="ofertas" className="border-y border-[#d8e9f8] bg-gradient-to-b from-[#eef7ff] to-[#f7f9fc] py-14 sm:py-16">
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="mb-7 sm:mb-8">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#1456a0] px-3 py-1.5 text-xs font-bold text-white"><BadgePercent className="size-4" /> Precios especiales</div>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-[#102f53]">Ofertas de la semana</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">Aprovechá estos productos seleccionados por tiempo limitado.</p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5 lg:grid-cols-4">
+          {products.map((product) => <ProductCard key={product.id} product={product} onAdd={onAdd} variant="offer" />)}
         </div>
       </div>
     </section>

@@ -28,6 +28,8 @@ export default function Page() {
     return matchesQuery && matchesCategory
   }), [query, category])
 
+  const offerProducts = useMemo(() => products.filter((product) => product.offer === true), [])
+
   const addToCartAndOpen = (product: Product) => {
     addToCart(product.id)
     setCartOpen(true)
@@ -51,8 +53,8 @@ export default function Page() {
       />
       <Hero />
       <CategorySection onSelect={selectCategoryFromBrowse} />
+      <OffersSection products={offerProducts} onAdd={addToCartAndOpen} />
       <ProductSection products={visibleProducts} category={category} onSelectCategory={setCategory} onAdd={addToCartAndOpen} />
-      <OffersSection />
       <BenefitsSection />
       <HowToBuySection />
       <DeliverySection />
