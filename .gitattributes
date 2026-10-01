@@ -1,0 +1,3 @@
+# Normalizar saltos de línea y evitar warnings de conversión CRLF/LF
+* text=auto
+*.sh text eol=lf
