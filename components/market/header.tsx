@@ -1,6 +1,7 @@
 'use client'
 
-import { Menu, Search, ShoppingBag, X } from 'lucide-react'
+import Link from 'next/link'
+import { Clock3, MapPin, Menu, Search, Settings, ShoppingBag, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 type HeaderProps = {
@@ -10,6 +11,7 @@ type HeaderProps = {
   onToggleMenu: () => void
   cartReady: boolean
   cartCount: number
+  hasOffers: boolean
   onOpenCart: () => void
 }
 
@@ -20,27 +22,35 @@ export function Header({
   onToggleMenu,
   cartReady,
   cartCount,
+  hasOffers,
   onOpenCart,
 }: HeaderProps) {
   return (
     <>
-      <div className="bg-[#0d2d55] px-4 py-2 text-center text-xs font-medium tracking-wide text-white/90">Beneficios exclusivos para trabajadores y adherentes</div>
-      <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-5 px-4 py-4 lg:px-8">
+      <div className="bg-[#0d2d55] px-4 py-2 text-[11px] font-semibold text-white/90 sm:text-xs">
+        <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 sm:justify-between">
+          <span className="hidden items-center gap-2 sm:flex"><MapPin className="size-3.5" /> Entregas en zonas norte y sur</span>
+          <span className="flex items-center gap-2"><Clock3 className="size-3.5" /> Horario de entrega: 09:00 a 16:30</span>
+        </div>
+      </div>
+      <header className="sticky top-0 z-30 border-b border-[#dceaf7] bg-white/95 shadow-[0_8px_30px_rgba(18,53,95,0.06)] backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 lg:flex-nowrap lg:px-8">
           <a href="#inicio" className="flex shrink-0 items-center gap-2.5" aria-label="Market Mutual inicio">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-[#1456a0] text-white shadow-sm"><ShoppingBag /></span>
-            <span className="text-lg font-bold tracking-tight text-[#12355f]">Market <span className="text-[#2385d5]">Mutual</span></span>
+            <span className="flex size-10 items-center justify-center rounded-[14px] bg-[#1456a0] text-white shadow-[0_8px_18px_rgba(20,86,160,0.25)]"><ShoppingBag className="size-5" /></span>
+            <span className="text-lg font-extrabold tracking-tight text-[#12355f]">Market <span className="text-[#2385d5]">Mutual</span></span>
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
-            <a className="text-[#1456a0]" href="#inicio">Inicio</a><a href="#productos" className="hover:text-[#1456a0]">Productos</a><a href="#categorias" className="hover:text-[#1456a0]">Categorías</a><a href="#ofertas" className="hover:text-[#1456a0]">Ofertas</a><a href="#como-comprar" className="hover:text-[#1456a0]">Cómo comprar</a>
+          <nav className="hidden items-center gap-5 text-sm font-semibold text-slate-600 lg:flex">
+            <a className="text-[#1456a0]" href="#inicio">Inicio</a><a href="#productos" className="hover:text-[#1456a0]">Productos</a><a href="#categorias" className="hover:text-[#1456a0]">Categorías</a>{hasOffers && <a href="#ofertas" className="hover:text-[#1456a0]">Ofertas</a>}<a href="#como-comprar" className="hover:text-[#1456a0]">Cómo comprar</a>
           </nav>
           <div className="ml-auto flex items-center gap-2">
-            <div className="hidden h-10 w-56 items-center gap-2 rounded-xl bg-slate-100 px-3 md:flex"><Search className="size-4 text-slate-400" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400" placeholder="¿Qué estás buscando?" aria-label="Buscar productos" /></div>
-            <Button variant="ghost" size="icon" className="relative rounded-xl text-[#12355f]" onClick={onOpenCart} aria-label="Abrir carrito"><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#ee6b4d] text-[10px] font-bold text-white">{cartCount}</span>}</Button>
-            <Button variant="ghost" size="icon" className="lg:hidden" onClick={onToggleMenu} aria-label="Abrir menú">{menuOpen ? <X /> : <Menu />}</Button>
+            <div className="hidden h-11 w-[min(24vw,320px)] items-center gap-2 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:flex"><Search className="size-4 text-[#4e7196]" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="Buscar productos" aria-label="Buscar productos" /></div>
+            <Link href="/admin" className="hidden size-11 items-center justify-center rounded-2xl text-[#12355f] transition hover:bg-[#edf6fd] md:flex" aria-label="Abrir administración demo"><Settings className="size-4" /></Link>
+            <Button variant="ghost" size="icon" className="relative size-11 rounded-2xl bg-[#edf6fd] text-[#1456a0] hover:bg-[#dceefe]" onClick={onOpenCart} aria-label="Abrir carrito"><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#1456a0] text-[10px] font-bold text-white ring-2 ring-white">{cartCount}</span>}</Button>
+            <Button variant="ghost" size="icon" className="size-11 rounded-2xl lg:hidden" onClick={onToggleMenu} aria-label="Abrir menú">{menuOpen ? <X /> : <Menu />}</Button>
           </div>
+          <label className="order-3 flex h-11 w-full items-center gap-3 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:hidden"><Search className="size-4 text-[#4e7196]" /><span className="sr-only">Buscar productos</span><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="¿Qué estás buscando?" /></label>
         </div>
-        {menuOpen && <nav className="flex flex-col gap-4 border-t border-slate-100 px-5 py-5 text-sm font-semibold lg:hidden"><a href="#inicio" onClick={onToggleMenu}>Inicio</a><a href="#productos" onClick={onToggleMenu}>Productos</a><a href="#categorias" onClick={onToggleMenu}>Categorías</a><a href="#ofertas" onClick={onToggleMenu}>Ofertas</a><a href="#como-comprar" onClick={onToggleMenu}>Cómo comprar</a></nav>}
+        {menuOpen && <nav className="flex flex-col gap-4 border-t border-[#e7f0f8] bg-white px-5 py-5 text-sm font-semibold lg:hidden"><a href="#inicio" onClick={onToggleMenu}>Inicio</a><a href="#productos" onClick={onToggleMenu}>Productos</a><a href="#categorias" onClick={onToggleMenu}>Categorías</a>{hasOffers && <a href="#ofertas" onClick={onToggleMenu}>Ofertas</a>}<a href="#como-comprar" onClick={onToggleMenu}>Cómo comprar</a><Link href="/admin" onClick={onToggleMenu}>Administración DEMO</Link></nav>}
       </header>
     </>
   )

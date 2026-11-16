@@ -6,6 +6,8 @@ import type { DeliveryZone } from '@/lib/delivery-neighborhoods'
 
 export type { DeliveryZone } from '@/lib/delivery-neighborhoods'
 
+export type PaymentMethod = 'mercado_pago' | 'gocuotas'
+
 export type CheckoutData = {
   name: string
   phone: string
@@ -14,6 +16,7 @@ export type CheckoutData = {
   zone: DeliveryZone | ''
   reference: string
   observations: string
+  paymentMethod: PaymentMethod | ''
 }
 
 export const EMPTY_CHECKOUT: CheckoutData = {
@@ -24,6 +27,7 @@ export const EMPTY_CHECKOUT: CheckoutData = {
   zone: '',
   reference: '',
   observations: '',
+  paymentMethod: '',
 }
 
 export const DELIVERY_MINIMUM: Record<DeliveryZone, number> = {
@@ -31,7 +35,7 @@ export const DELIVERY_MINIMUM: Record<DeliveryZone, number> = {
   Sur: 60000,
 }
 
-export type CheckoutField = 'name' | 'phone' | 'address' | 'barrio' | 'zone'
+export type CheckoutField = 'name' | 'phone' | 'address' | 'barrio' | 'zone' | 'paymentMethod'
 
 export type CheckoutErrors = Partial<Record<CheckoutField, string>>
 
@@ -62,6 +66,10 @@ export function validateCheckout(data: CheckoutData): CheckoutErrors {
     errors.zone = 'Consultanos para confirmar la zona y el mínimo de envío.'
   } else if (!derivedZone || data.zone !== derivedZone) {
     errors.zone = 'Seleccioná un barrio disponible para determinar la zona de entrega.'
+  }
+
+  if (!data.paymentMethod) {
+    errors.paymentMethod = 'Elegí cómo querés continuar con el pago demo.'
   }
 
   return errors

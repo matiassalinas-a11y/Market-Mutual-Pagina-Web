@@ -1,0 +1,3822 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-16T15:20:29.257Z",
+  "sourceCatalog": "catalogo_final.xlsx",
+  "associations": [
+    {
+      "productId": "sku:1",
+      "sku": "1",
+      "barcode": "7790139102449",
+      "imageUrl": "/products/7790139102449.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1008",
+      "sku": "1008",
+      "barcode": "7790040136250",
+      "imageUrl": "/products/7790040136250.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:101",
+      "sku": "101",
+      "barcode": "7790895643828",
+      "imageUrl": "/products/7790895643828.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1010",
+      "sku": "1010",
+      "barcode": "7791078022744",
+      "imageUrl": "/products/7791078022744.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1022",
+      "sku": "1022",
+      "barcode": "77969118",
+      "imageUrl": "/products/77969118.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1023",
+      "sku": "1023",
+      "barcode": "77969071",
+      "imageUrl": "/products/77969071.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1031",
+      "sku": "1031",
+      "barcode": "7798128000691",
+      "imageUrl": "/products/7798128000691.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1048",
+      "sku": "1048",
+      "barcode": "7790310985793",
+      "imageUrl": "/products/7790310985793.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1049",
+      "sku": "1049",
+      "barcode": "7790310985809",
+      "imageUrl": "/products/7790310985809.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1051",
+      "sku": "1051",
+      "barcode": "7790310985670",
+      "imageUrl": "/products/7790310985670.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1052",
+      "sku": "1052",
+      "barcode": "7790310985274",
+      "imageUrl": "/products/7790310985274.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1079",
+      "sku": "1079",
+      "barcode": "7798096031109",
+      "imageUrl": "/products/7798096031109.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1080",
+      "sku": "1080",
+      "barcode": "7790580980801",
+      "imageUrl": "/products/7790580980801.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:111",
+      "sku": "111",
+      "barcode": "7798062543919",
+      "imageUrl": "/products/7798062543919.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:112",
+      "sku": "112",
+      "barcode": "7798062543926",
+      "imageUrl": "/products/7798062543926.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1158",
+      "sku": "1158",
+      "barcode": "7790580118099",
+      "imageUrl": "/products/7790580118099.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1166",
+      "sku": "1166",
+      "barcode": "7791290795648",
+      "imageUrl": "/products/7791290795648.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1173",
+      "sku": "1173",
+      "barcode": "7791290793385",
+      "imageUrl": "/products/7791290793385.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1174",
+      "sku": "1174",
+      "barcode": "7791290794238",
+      "imageUrl": "/products/7791290794238.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1178",
+      "sku": "1178",
+      "barcode": "7791290795822",
+      "imageUrl": "/products/7791290795822.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1187",
+      "sku": "1187",
+      "barcode": "7791290795624",
+      "imageUrl": "/products/7791290795624.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:122",
+      "sku": "122",
+      "barcode": "7791913005710",
+      "imageUrl": "/products/7791913005710.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1221",
+      "sku": "1221",
+      "barcode": "7791200200538",
+      "imageUrl": "/products/7791200200538.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1225",
+      "sku": "1225",
+      "barcode": "7798085681834",
+      "imageUrl": "/products/7798085681834.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1248",
+      "sku": "1248",
+      "barcode": "7790040143753",
+      "imageUrl": "/products/7790040143753.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1251",
+      "sku": "1251",
+      "barcode": "7891150055780",
+      "imageUrl": "/products/7891150055780.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1268",
+      "sku": "1268",
+      "barcode": "7790895005374",
+      "imageUrl": "/products/7790895005374.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1284",
+      "sku": "1284",
+      "barcode": "7790150497852",
+      "imageUrl": "/products/7790150497852.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:129",
+      "sku": "129",
+      "barcode": "7790598010217",
+      "imageUrl": "/products/7790598010217.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1290",
+      "sku": "1290",
+      "barcode": "7790070265470",
+      "imageUrl": "/products/7790070265470.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1317",
+      "sku": "1317",
+      "barcode": "77973986",
+      "imageUrl": "/products/77973986.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:133",
+      "sku": "133",
+      "barcode": "7790598000461",
+      "imageUrl": "/products/7790598000461.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1339",
+      "sku": "1339",
+      "barcode": "7790150465332",
+      "imageUrl": "/products/7790150465332.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:134",
+      "sku": "134",
+      "barcode": "7790150411391",
+      "imageUrl": "/products/7790150411391.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1346",
+      "sku": "1346",
+      "barcode": "7790150445365",
+      "imageUrl": "/products/7790150445365.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1347",
+      "sku": "1347",
+      "barcode": "7790150445396",
+      "imageUrl": "/products/7790150445396.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1349",
+      "sku": "1349",
+      "barcode": "7790150497081",
+      "imageUrl": "/products/7790150497081.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1364",
+      "sku": "1364",
+      "barcode": "7791019000060",
+      "imageUrl": "/products/7791019000060.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1373",
+      "sku": "1373",
+      "barcode": "7790040143265",
+      "imageUrl": "/products/7790040143265.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1380",
+      "sku": "1380",
+      "barcode": "7792798014705",
+      "imageUrl": "/products/7792798014705.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1381",
+      "sku": "1381",
+      "barcode": "7792798003716",
+      "imageUrl": "/products/7792798003716.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1388",
+      "sku": "1388",
+      "barcode": "7509552836592",
+      "imageUrl": "/products/7509552836592.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1392",
+      "sku": "1392",
+      "barcode": "7509546687292",
+      "imageUrl": "/products/7509546687292.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1447",
+      "sku": "1447",
+      "barcode": "7790040377806",
+      "imageUrl": "/products/7790040377806.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1448",
+      "sku": "1448",
+      "barcode": "7790040377707",
+      "imageUrl": "/products/7790040377707.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1478",
+      "sku": "1478",
+      "barcode": "7794820902936",
+      "imageUrl": "/products/7794820902936.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:154",
+      "sku": "154",
+      "barcode": "7791290792067",
+      "imageUrl": "/products/7791290792067.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1578",
+      "sku": "1578",
+      "barcode": "7790189000023",
+      "imageUrl": "/products/7790189000023.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1595",
+      "sku": "1595",
+      "barcode": "7790310985656",
+      "imageUrl": "/products/7790310985656.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1687",
+      "sku": "1687",
+      "barcode": "7790950144550",
+      "imageUrl": "/products/7790950144550.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:169",
+      "sku": "169",
+      "barcode": "7790040991910",
+      "imageUrl": "/products/7790040991910.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1690",
+      "sku": "1690",
+      "barcode": "7790950202816",
+      "imageUrl": "/products/7790950202816.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1694",
+      "sku": "1694",
+      "barcode": "7790950137804",
+      "imageUrl": "/products/7790950137804.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1699",
+      "sku": "1699",
+      "barcode": "7790950202823",
+      "imageUrl": "/products/7790950202823.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1700",
+      "sku": "1700",
+      "barcode": "7790950140859",
+      "imageUrl": "/products/7790950140859.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1701",
+      "sku": "1701",
+      "barcode": "7790950144758",
+      "imageUrl": "/products/7790950144758.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1719",
+      "sku": "1719",
+      "barcode": "7790742104304",
+      "imageUrl": "/products/7790742104304.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1733",
+      "sku": "1733",
+      "barcode": "7790742104809",
+      "imageUrl": "/products/7790742104809.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1739",
+      "sku": "1739",
+      "barcode": "7790742625205",
+      "imageUrl": "/products/7790742625205.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:174",
+      "sku": "174",
+      "barcode": "7790040613607",
+      "imageUrl": "/products/7790040613607.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1744",
+      "sku": "1744",
+      "barcode": "7790742625106",
+      "imageUrl": "/products/7790742625106.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1749",
+      "sku": "1749",
+      "barcode": "7794820902028",
+      "imageUrl": "/products/7794820902028.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1756",
+      "sku": "1756",
+      "barcode": "7790742067005",
+      "imageUrl": "/products/7790742067005.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1780",
+      "sku": "1780",
+      "barcode": "7792799000011",
+      "imageUrl": "/products/7792799000011.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1781",
+      "sku": "1781",
+      "barcode": "7792799000639",
+      "imageUrl": "/products/7792799000639.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1807",
+      "sku": "1807",
+      "barcode": "7896004009155",
+      "imageUrl": "/products/7896004009155.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1808",
+      "sku": "1808",
+      "barcode": "7896004009179",
+      "imageUrl": "/products/7896004009179.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:184",
+      "sku": "184",
+      "barcode": "7790040152748",
+      "imageUrl": "/products/7790040152748.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:185",
+      "sku": "185",
+      "barcode": "7790040148840",
+      "imageUrl": "/products/7790040148840.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1850",
+      "sku": "1850",
+      "barcode": "7791905002567",
+      "imageUrl": "/products/7791905002567.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1861",
+      "sku": "1861",
+      "barcode": "736684208714",
+      "imageUrl": "/products/736684208714.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1883",
+      "sku": "1883",
+      "barcode": "7790150510353",
+      "imageUrl": "/products/7790150510353.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1913",
+      "sku": "1913",
+      "barcode": "7793862010777",
+      "imageUrl": "/products/7793862010777.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1926",
+      "sku": "1926",
+      "barcode": "7790368031398",
+      "imageUrl": "/products/7790368031398.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1937",
+      "sku": "1937",
+      "barcode": "7790895000256",
+      "imageUrl": "/products/7790895000256.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1938",
+      "sku": "1938",
+      "barcode": "7790895001017",
+      "imageUrl": "/products/7790895001017.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1941",
+      "sku": "1941",
+      "barcode": "7790895000836",
+      "imageUrl": "/products/7790895000836.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1943",
+      "sku": "1943",
+      "barcode": "7790895000454",
+      "imageUrl": "/products/7790895000454.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:195",
+      "sku": "195",
+      "barcode": "7790040154896",
+      "imageUrl": "/products/7790040154896.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1953",
+      "sku": "1953",
+      "barcode": "7793890262162",
+      "imageUrl": "/products/7793890262162.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1974",
+      "sku": "1974",
+      "barcode": "7790070335968",
+      "imageUrl": "/products/7790070335968.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:1987",
+      "sku": "1987",
+      "barcode": "7790070336149",
+      "imageUrl": "/products/7790070336149.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:199",
+      "sku": "199",
+      "barcode": "7790040133570",
+      "imageUrl": "/products/7790040133570.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:200",
+      "sku": "200",
+      "barcode": "7790040133587",
+      "imageUrl": "/products/7790040133587.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2021",
+      "sku": "2021",
+      "barcode": "7794080001554",
+      "imageUrl": "/products/7794080001554.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2058",
+      "sku": "2058",
+      "barcode": "7790070413116",
+      "imageUrl": "/products/7790070413116.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2064",
+      "sku": "2064",
+      "barcode": "7622201705268",
+      "imageUrl": "/products/7622201705268.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:208",
+      "sku": "208",
+      "barcode": "7790040953703",
+      "imageUrl": "/products/7790040953703.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:217",
+      "sku": "217",
+      "barcode": "7791274198045",
+      "imageUrl": "/products/7791274198045.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2200",
+      "sku": "2200",
+      "barcode": "7798128000677",
+      "imageUrl": "/products/7798128000677.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:221",
+      "sku": "221",
+      "barcode": "7791274009532",
+      "imageUrl": "/products/7791274009532.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2239",
+      "sku": "2239",
+      "barcode": "7790950000160",
+      "imageUrl": "/products/7790950000160.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2242",
+      "sku": "2242",
+      "barcode": "7790580132477",
+      "imageUrl": "/products/7790580132477.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2243",
+      "sku": "2243",
+      "barcode": "7798096031079",
+      "imageUrl": "/products/7798096031079.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2246",
+      "sku": "2246",
+      "barcode": "7509552923759",
+      "imageUrl": "/products/7509552923759.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2247",
+      "sku": "2247",
+      "barcode": "7509552923889",
+      "imageUrl": "/products/7509552923889.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:228",
+      "sku": "228",
+      "barcode": "7790064000261",
+      "imageUrl": "/products/7790064000261.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2323",
+      "sku": "2323",
+      "barcode": "7790380008286",
+      "imageUrl": "/products/7790380008286.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2337",
+      "sku": "2337",
+      "barcode": "7792390620809",
+      "imageUrl": "/products/7792390620809.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2340",
+      "sku": "2340",
+      "barcode": "7792390620748",
+      "imageUrl": "/products/7792390620748.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2341",
+      "sku": "2341",
+      "barcode": "7792390620724",
+      "imageUrl": "/products/7792390620724.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2342",
+      "sku": "2342",
+      "barcode": "7792390620700",
+      "imageUrl": "/products/7792390620700.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2343",
+      "sku": "2343",
+      "barcode": "7792390620762",
+      "imageUrl": "/products/7792390620762.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2352",
+      "sku": "2352",
+      "barcode": "7790121001064",
+      "imageUrl": "/products/7790121001064.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2354",
+      "sku": "2354",
+      "barcode": "790757820098",
+      "imageUrl": "/products/790757820098.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2442",
+      "sku": "2442",
+      "barcode": "7790480008254",
+      "imageUrl": "/products/7790480008254.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2483",
+      "sku": "2483",
+      "barcode": "7622202247286",
+      "imageUrl": "/products/7622202247286.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2484",
+      "sku": "2484",
+      "barcode": "7622202288227",
+      "imageUrl": "/products/7622202288227.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2485",
+      "sku": "2485",
+      "barcode": "7622202288258",
+      "imageUrl": "/products/7622202288258.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2486",
+      "sku": "2486",
+      "barcode": "7622202247316",
+      "imageUrl": "/products/7622202247316.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2487",
+      "sku": "2487",
+      "barcode": "7622202247392",
+      "imageUrl": "/products/7622202247392.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2489",
+      "sku": "2489",
+      "barcode": "7622202271298",
+      "imageUrl": "/products/7622202271298.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2490",
+      "sku": "2490",
+      "barcode": "7622202247361",
+      "imageUrl": "/products/7622202247361.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2492",
+      "sku": "2492",
+      "barcode": "7622202271267",
+      "imageUrl": "/products/7622202271267.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2494",
+      "sku": "2494",
+      "barcode": "7793890258806",
+      "imageUrl": "/products/7793890258806.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2525",
+      "sku": "2525",
+      "barcode": "7792180137258",
+      "imageUrl": "/products/7792180137258.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2539",
+      "sku": "2539",
+      "barcode": "7792180004567",
+      "imageUrl": "/products/7792180004567.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2563",
+      "sku": "2563",
+      "barcode": "7790150310281",
+      "imageUrl": "/products/7790150310281.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2564",
+      "sku": "2564",
+      "barcode": "7790150350171",
+      "imageUrl": "/products/7790150350171.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2567",
+      "sku": "2567",
+      "barcode": "7790150340165",
+      "imageUrl": "/products/7790150340165.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2568",
+      "sku": "2568",
+      "barcode": "7790150360262",
+      "imageUrl": "/products/7790150360262.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2569",
+      "sku": "2569",
+      "barcode": "7790150320266",
+      "imageUrl": "/products/7790150320266.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2570",
+      "sku": "2570",
+      "barcode": "7790150321065",
+      "imageUrl": "/products/7790150321065.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2623",
+      "sku": "2623",
+      "barcode": "40084107",
+      "imageUrl": "/products/40084107.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2655",
+      "sku": "2655",
+      "barcode": "7791905002376",
+      "imageUrl": "/products/7791905002376.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2659",
+      "sku": "2659",
+      "barcode": "7790150100783",
+      "imageUrl": "/products/7790150100783.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2660",
+      "sku": "2660",
+      "barcode": "7790150100677",
+      "imageUrl": "/products/7790150100677.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2661",
+      "sku": "2661",
+      "barcode": "7790150110188",
+      "imageUrl": "/products/7790150110188.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2664",
+      "sku": "2664",
+      "barcode": "7790150101667",
+      "imageUrl": "/products/7790150101667.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2665",
+      "sku": "2665",
+      "barcode": "7790150101773",
+      "imageUrl": "/products/7790150101773.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2666",
+      "sku": "2666",
+      "barcode": "7790150101490",
+      "imageUrl": "/products/7790150101490.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2688",
+      "sku": "2688",
+      "barcode": "7790990002278",
+      "imageUrl": "/products/7790990002278.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:274",
+      "sku": "274",
+      "barcode": "7790950135992",
+      "imageUrl": "/products/7790950135992.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:276",
+      "sku": "276",
+      "barcode": "7790040143531",
+      "imageUrl": "/products/7790040143531.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2763",
+      "sku": "2763",
+      "barcode": "7791290796409",
+      "imageUrl": "/products/7791290796409.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2773",
+      "sku": "2773",
+      "barcode": "5011007003005",
+      "imageUrl": "/products/5011007003005.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2784",
+      "sku": "2784",
+      "barcode": "7798178470055",
+      "imageUrl": "/products/7798178470055.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2788",
+      "sku": "2788",
+      "barcode": "7790580141844",
+      "imageUrl": "/products/7790580141844.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2790",
+      "sku": "2790",
+      "barcode": "7891112129214",
+      "imageUrl": "/products/7891112129214.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2804",
+      "sku": "2804",
+      "barcode": "7790580144142",
+      "imageUrl": "/products/7790580144142.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2815",
+      "sku": "2815",
+      "barcode": "7790036000589",
+      "imageUrl": "/products/7790036000589.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2816",
+      "sku": "2816",
+      "barcode": "7790036000572",
+      "imageUrl": "/products/7790036000572.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2820",
+      "sku": "2820",
+      "barcode": "7790036000619",
+      "imageUrl": "/products/7790036000619.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2844",
+      "sku": "2844",
+      "barcode": "7790580143244",
+      "imageUrl": "/products/7790580143244.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:285",
+      "sku": "285",
+      "barcode": "7792798002726",
+      "imageUrl": "/products/7792798002726.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2851",
+      "sku": "2851",
+      "barcode": "7791913000531",
+      "imageUrl": "/products/7791913000531.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2852",
+      "sku": "2852",
+      "barcode": "7791913000159",
+      "imageUrl": "/products/7791913000159.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2883",
+      "sku": "2883",
+      "barcode": "7793360103018",
+      "imageUrl": "/products/7793360103018.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:289",
+      "sku": "289",
+      "barcode": "7792798999866",
+      "imageUrl": "/products/7792798999866.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:290",
+      "sku": "290",
+      "barcode": "7792798014156",
+      "imageUrl": "/products/7792798014156.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2925",
+      "sku": "2925",
+      "barcode": "77969088",
+      "imageUrl": "/products/77969088.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:293",
+      "sku": "293",
+      "barcode": "7790150420331",
+      "imageUrl": "/products/7790150420331.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2958",
+      "sku": "2958",
+      "barcode": "7622210719829",
+      "imageUrl": "/products/7622210719829.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:2992",
+      "sku": "2992",
+      "barcode": "7622201464882",
+      "imageUrl": "/products/7622201464882.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3",
+      "sku": "3",
+      "barcode": "7790310985113",
+      "imageUrl": "/products/7790310985113.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:30",
+      "sku": "30",
+      "barcode": "7790070012050",
+      "imageUrl": "/products/7790070012050.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3006",
+      "sku": "3006",
+      "barcode": "7622201746490",
+      "imageUrl": "/products/7622201746490.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3026",
+      "sku": "3026",
+      "barcode": "7622201745738",
+      "imageUrl": "/products/7622201745738.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:303",
+      "sku": "303",
+      "barcode": "7791905024712",
+      "imageUrl": "/products/7791905024712.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3046",
+      "sku": "3046",
+      "barcode": "7622201705992",
+      "imageUrl": "/products/7622201705992.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3050",
+      "sku": "3050",
+      "barcode": "80052760",
+      "imageUrl": "/products/80052760.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:308",
+      "sku": "308",
+      "barcode": "7798167047923",
+      "imageUrl": "/products/7798167047923.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:309",
+      "sku": "309",
+      "barcode": "7790290101480",
+      "imageUrl": "/products/7790290101480.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3090",
+      "sku": "3090",
+      "barcode": "7794626014932",
+      "imageUrl": "/products/7794626014932.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:311",
+      "sku": "311",
+      "barcode": "7790895640476",
+      "imageUrl": "/products/7790895640476.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3111",
+      "sku": "3111",
+      "barcode": "7790742437402",
+      "imageUrl": "/products/7790742437402.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3130",
+      "sku": "3130",
+      "barcode": "7790250097617",
+      "imageUrl": "/products/7790250097617.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3140",
+      "sku": "3140",
+      "barcode": "7798123970791",
+      "imageUrl": "/products/7798123970791.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3145",
+      "sku": "3145",
+      "barcode": "7790070337016",
+      "imageUrl": "/products/7790070337016.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3148",
+      "sku": "3148",
+      "barcode": "7792798013357",
+      "imageUrl": "/products/7792798013357.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3149",
+      "sku": "3149",
+      "barcode": "7792798013975",
+      "imageUrl": "/products/7792798013975.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3152",
+      "sku": "3152",
+      "barcode": "7790150530320",
+      "imageUrl": "/products/7790150530320.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:317",
+      "sku": "317",
+      "barcode": "7790895008481",
+      "imageUrl": "/products/7790895008481.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3185",
+      "sku": "3185",
+      "barcode": "7790310985458",
+      "imageUrl": "/products/7790310985458.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:319",
+      "sku": "319",
+      "barcode": "7790895003301",
+      "imageUrl": "/products/7790895003301.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3192",
+      "sku": "3192",
+      "barcode": "7790310985557",
+      "imageUrl": "/products/7790310985557.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3193",
+      "sku": "3193",
+      "barcode": "7790310985328",
+      "imageUrl": "/products/7790310985328.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3198",
+      "sku": "3198",
+      "barcode": "7790310985502",
+      "imageUrl": "/products/7790310985502.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:320",
+      "sku": "320",
+      "barcode": "7790895640452",
+      "imageUrl": "/products/7790895640452.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3201",
+      "sku": "3201",
+      "barcode": "7790310987780",
+      "imageUrl": "/products/7790310987780.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:321",
+      "sku": "321",
+      "barcode": "7790895640483",
+      "imageUrl": "/products/7790895640483.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3216",
+      "sku": "3216",
+      "barcode": "7794820004159",
+      "imageUrl": "/products/7794820004159.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:322",
+      "sku": "322",
+      "barcode": "7790895641213",
+      "imageUrl": "/products/7790895641213.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3221",
+      "sku": "3221",
+      "barcode": "7798338290479",
+      "imageUrl": "/products/7798338290479.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3223",
+      "sku": "3223",
+      "barcode": "7790742363107",
+      "imageUrl": "/products/7790742363107.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3227",
+      "sku": "3227",
+      "barcode": "7790787002535",
+      "imageUrl": "/products/7790787002535.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3229",
+      "sku": "3229",
+      "barcode": "7793913012996",
+      "imageUrl": "/products/7793913012996.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3235",
+      "sku": "3235",
+      "barcode": "7790742436306",
+      "imageUrl": "/products/7790742436306.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3236",
+      "sku": "3236",
+      "barcode": "7790742436405",
+      "imageUrl": "/products/7790742436405.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3242",
+      "sku": "3242",
+      "barcode": "7794820903100",
+      "imageUrl": "/products/7794820903100.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3249",
+      "sku": "3249",
+      "barcode": "7790742335500",
+      "imageUrl": "/products/7790742335500.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3254",
+      "sku": "3254",
+      "barcode": "7790742437709",
+      "imageUrl": "/products/7790742437709.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3263",
+      "sku": "3263",
+      "barcode": "7791337008410",
+      "imageUrl": "/products/7791337008410.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3270",
+      "sku": "3270",
+      "barcode": "7790742436207",
+      "imageUrl": "/products/7790742436207.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3271",
+      "sku": "3271",
+      "barcode": "7790742436108",
+      "imageUrl": "/products/7790742436108.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3282",
+      "sku": "3282",
+      "barcode": "7791337007918",
+      "imageUrl": "/products/7791337007918.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3293",
+      "sku": "3293",
+      "barcode": "77907943",
+      "imageUrl": "/products/77907943.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3309",
+      "sku": "3309",
+      "barcode": "7790813150131",
+      "imageUrl": "/products/7790813150131.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3313",
+      "sku": "3313",
+      "barcode": "7798062548709",
+      "imageUrl": "/products/7798062548709.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3314",
+      "sku": "3314",
+      "barcode": "7798062548648",
+      "imageUrl": "/products/7798062548648.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3324",
+      "sku": "3324",
+      "barcode": "7792410008051",
+      "imageUrl": "/products/7792410008051.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3325",
+      "sku": "3325",
+      "barcode": "7793862009832",
+      "imageUrl": "/products/7793862009832.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3327",
+      "sku": "3327",
+      "barcode": "7798081285364",
+      "imageUrl": "/products/7798081285364.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3335",
+      "sku": "3335",
+      "barcode": "7791130002776",
+      "imageUrl": "/products/7791130002776.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3354",
+      "sku": "3354",
+      "barcode": "7794626012815",
+      "imageUrl": "/products/7794626012815.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3355",
+      "sku": "3355",
+      "barcode": "7794626010330",
+      "imageUrl": "/products/7794626010330.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3370",
+      "sku": "3370",
+      "barcode": "7790070336385",
+      "imageUrl": "/products/7790070336385.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3372",
+      "sku": "3372",
+      "barcode": "7790070318343",
+      "imageUrl": "/products/7790070318343.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3377",
+      "sku": "3377",
+      "barcode": "7790070336118",
+      "imageUrl": "/products/7790070336118.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3409",
+      "sku": "3409",
+      "barcode": "7790150101087",
+      "imageUrl": "/products/7790150101087.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3410",
+      "sku": "3410",
+      "barcode": "7790150080849",
+      "imageUrl": "/products/7790150080849.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3411",
+      "sku": "3411",
+      "barcode": "7790150100172",
+      "imageUrl": "/products/7790150100172.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3413",
+      "sku": "3413",
+      "barcode": "7790150080146",
+      "imageUrl": "/products/7790150080146.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3426",
+      "sku": "3426",
+      "barcode": "7793890259117",
+      "imageUrl": "/products/7793890259117.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3427",
+      "sku": "3427",
+      "barcode": "7793890259094",
+      "imageUrl": "/products/7793890259094.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3430",
+      "sku": "3430",
+      "barcode": "7793890259124",
+      "imageUrl": "/products/7793890259124.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3450",
+      "sku": "3450",
+      "barcode": "7794000007451",
+      "imageUrl": "/products/7794000007451.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3452",
+      "sku": "3452",
+      "barcode": "7794000007468",
+      "imageUrl": "/products/7794000007468.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3471",
+      "sku": "3471",
+      "barcode": "7790040133266",
+      "imageUrl": "/products/7790040133266.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:348",
+      "sku": "348",
+      "barcode": "7791019171890",
+      "imageUrl": "/products/7791019171890.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3487",
+      "sku": "3487",
+      "barcode": "7790310983874",
+      "imageUrl": "/products/7790310983874.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3532",
+      "sku": "3532",
+      "barcode": "7622201816414",
+      "imageUrl": "/products/7622201816414.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3540",
+      "sku": "3540",
+      "barcode": "7794440994670",
+      "imageUrl": "/products/7794440994670.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3543",
+      "sku": "3543",
+      "barcode": "7794440007059",
+      "imageUrl": "/products/7794440007059.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3570",
+      "sku": "3570",
+      "barcode": "7702018880409",
+      "imageUrl": "/products/7702018880409.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3586",
+      "sku": "3586",
+      "barcode": "7790070318619",
+      "imageUrl": "/products/7790070318619.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3596",
+      "sku": "3596",
+      "barcode": "7790480090006",
+      "imageUrl": "/products/7790480090006.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3598",
+      "sku": "3598",
+      "barcode": "7790070508805",
+      "imageUrl": "/products/7790070508805.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3603",
+      "sku": "3603",
+      "barcode": "7794000009431",
+      "imageUrl": "/products/7794000009431.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3646",
+      "sku": "3646",
+      "barcode": "7790040143548",
+      "imageUrl": "/products/7790040143548.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3657",
+      "sku": "3657",
+      "barcode": "77958662",
+      "imageUrl": "/products/77958662.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:366",
+      "sku": "366",
+      "barcode": "7790070431578",
+      "imageUrl": "/products/7790070431578.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3664",
+      "sku": "3664",
+      "barcode": "78916401",
+      "imageUrl": "/products/78916401.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3667",
+      "sku": "3667",
+      "barcode": "78916418",
+      "imageUrl": "/products/78916418.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3676",
+      "sku": "3676",
+      "barcode": "7790580132255",
+      "imageUrl": "/products/7790580132255.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3685",
+      "sku": "3685",
+      "barcode": "7793360131424",
+      "imageUrl": "/products/7793360131424.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3703",
+      "sku": "3703",
+      "barcode": "7792798014019",
+      "imageUrl": "/products/7792798014019.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3740",
+      "sku": "3740",
+      "barcode": "7790040133600",
+      "imageUrl": "/products/7790040133600.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3758",
+      "sku": "3758",
+      "barcode": "7790150161029",
+      "imageUrl": "/products/7790150161029.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3759",
+      "sku": "3759",
+      "barcode": "7790150160725",
+      "imageUrl": "/products/7790150160725.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3771",
+      "sku": "3771",
+      "barcode": "7794000009141",
+      "imageUrl": "/products/7794000009141.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3776",
+      "sku": "3776",
+      "barcode": "7790150532508",
+      "imageUrl": "/products/7790150532508.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3780",
+      "sku": "3780",
+      "barcode": "7790150161326",
+      "imageUrl": "/products/7790150161326.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3785",
+      "sku": "3785",
+      "barcode": "7794000009158",
+      "imageUrl": "/products/7794000009158.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3786",
+      "sku": "3786",
+      "barcode": "7794000009295",
+      "imageUrl": "/products/7794000009295.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3787",
+      "sku": "3787",
+      "barcode": "7794000009479",
+      "imageUrl": "/products/7794000009479.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3790",
+      "sku": "3790",
+      "barcode": "7793862009719",
+      "imageUrl": "/products/7793862009719.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3793",
+      "sku": "3793",
+      "barcode": "7790368294199",
+      "imageUrl": "/products/7790368294199.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3824",
+      "sku": "3824",
+      "barcode": "7790580116880",
+      "imageUrl": "/products/7790580116880.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3827",
+      "sku": "3827",
+      "barcode": "7790580199913",
+      "imageUrl": "/products/7790580199913.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3830",
+      "sku": "3830",
+      "barcode": "7790580617813",
+      "imageUrl": "/products/7790580617813.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3833",
+      "sku": "3833",
+      "barcode": "7790580200114",
+      "imageUrl": "/products/7790580200114.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3835",
+      "sku": "3835",
+      "barcode": "7790580230111",
+      "imageUrl": "/products/7790580230111.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3840",
+      "sku": "3840",
+      "barcode": "7790150551745",
+      "imageUrl": "/products/7790150551745.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3854",
+      "sku": "3854",
+      "barcode": "7798422620021",
+      "imageUrl": "/products/7798422620021.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3859",
+      "sku": "3859",
+      "barcode": "1007084701235",
+      "imageUrl": "/products/1007084701235.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3861",
+      "sku": "3861",
+      "barcode": "7798422620120",
+      "imageUrl": "/products/7798422620120.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3864",
+      "sku": "3864",
+      "barcode": "7798422620069",
+      "imageUrl": "/products/7798422620069.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3867",
+      "sku": "3867",
+      "barcode": "7790199603030",
+      "imageUrl": "/products/7790199603030.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3877",
+      "sku": "3877",
+      "barcode": "7794000006515",
+      "imageUrl": "/products/7794000006515.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3933",
+      "sku": "3933",
+      "barcode": "7790580126056",
+      "imageUrl": "/products/7790580126056.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3941",
+      "sku": "3941",
+      "barcode": "7790150535394",
+      "imageUrl": "/products/7790150535394.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3953",
+      "sku": "3953",
+      "barcode": "7898587770705",
+      "imageUrl": "/products/7898587770705.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3965",
+      "sku": "3965",
+      "barcode": "7790580346614",
+      "imageUrl": "/products/7790580346614.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:3966",
+      "sku": "3966",
+      "barcode": "7790580346515",
+      "imageUrl": "/products/7790580346515.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4",
+      "sku": "4",
+      "barcode": "7790310985830",
+      "imageUrl": "/products/7790310985830.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4012",
+      "sku": "4012",
+      "barcode": "7790580129330",
+      "imageUrl": "/products/7790580129330.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4024",
+      "sku": "4024",
+      "barcode": "7798366891716",
+      "imageUrl": "/products/7798366891716.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:404",
+      "sku": "404",
+      "barcode": "7793890260885",
+      "imageUrl": "/products/7793890260885.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4051",
+      "sku": "4051",
+      "barcode": "7793890258752",
+      "imageUrl": "/products/7793890258752.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4053",
+      "sku": "4053",
+      "barcode": "7793890258790",
+      "imageUrl": "/products/7793890258790.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4067",
+      "sku": "4067",
+      "barcode": "7793890262155",
+      "imageUrl": "/products/7793890262155.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4205",
+      "sku": "4205",
+      "barcode": "7791813800750",
+      "imageUrl": "/products/7791813800750.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4217",
+      "sku": "4217",
+      "barcode": "7794000009523",
+      "imageUrl": "/products/7794000009523.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4219",
+      "sku": "4219",
+      "barcode": "656750783924",
+      "imageUrl": "/products/656750783924.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4220",
+      "sku": "4220",
+      "barcode": "7794000009516",
+      "imageUrl": "/products/7794000009516.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4223",
+      "sku": "4223",
+      "barcode": "7793100120275",
+      "imageUrl": "/products/7793100120275.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4229",
+      "sku": "4229",
+      "barcode": "7792222002865",
+      "imageUrl": "/products/7792222002865.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4230",
+      "sku": "4230",
+      "barcode": "7792222002827",
+      "imageUrl": "/products/7792222002827.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4235",
+      "sku": "4235",
+      "barcode": "7792798002351",
+      "imageUrl": "/products/7792798002351.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4245",
+      "sku": "4245",
+      "barcode": "7792798015023",
+      "imageUrl": "/products/7792798015023.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4246",
+      "sku": "4246",
+      "barcode": "7792798015009",
+      "imageUrl": "/products/7792798015009.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4255",
+      "sku": "4255",
+      "barcode": "7792798010882",
+      "imageUrl": "/products/7792798010882.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4288",
+      "sku": "4288",
+      "barcode": "7790310987742",
+      "imageUrl": "/products/7790310987742.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4292",
+      "sku": "4292",
+      "barcode": "7790310984338",
+      "imageUrl": "/products/7790310984338.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4293",
+      "sku": "4293",
+      "barcode": "7790310986615",
+      "imageUrl": "/products/7790310986615.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4294",
+      "sku": "4294",
+      "barcode": "7790310985526",
+      "imageUrl": "/products/7790310985526.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4296",
+      "sku": "4296",
+      "barcode": "7790310985380",
+      "imageUrl": "/products/7790310985380.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4307",
+      "sku": "4307",
+      "barcode": "7798048730364",
+      "imageUrl": "/products/7798048730364.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4309",
+      "sku": "4309",
+      "barcode": "7798048730913",
+      "imageUrl": "/products/7798048730913.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4318",
+      "sku": "4318",
+      "barcode": "7791813888413",
+      "imageUrl": "/products/7791813888413.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4319",
+      "sku": "4319",
+      "barcode": "7791813888468",
+      "imageUrl": "/products/7791813888468.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4332",
+      "sku": "4332",
+      "barcode": "7792410008259",
+      "imageUrl": "/products/7792410008259.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:434",
+      "sku": "434",
+      "barcode": "7792170555505",
+      "imageUrl": "/products/7792170555505.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4341",
+      "sku": "4341",
+      "barcode": "7790368298319",
+      "imageUrl": "/products/7790368298319.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4352",
+      "sku": "4352",
+      "barcode": "7790150564844",
+      "imageUrl": "/products/7790150564844.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4359",
+      "sku": "4359",
+      "barcode": "7790598012617",
+      "imageUrl": "/products/7790598012617.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4360",
+      "sku": "4360",
+      "barcode": "7790150556368",
+      "imageUrl": "/products/7790150556368.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4361",
+      "sku": "4361",
+      "barcode": "7790150555446",
+      "imageUrl": "/products/7790150555446.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4376",
+      "sku": "4376",
+      "barcode": "7790580126049",
+      "imageUrl": "/products/7790580126049.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4387",
+      "sku": "4387",
+      "barcode": "8023277143845",
+      "imageUrl": "/products/8023277143845.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4390",
+      "sku": "4390",
+      "barcode": "7793862011446",
+      "imageUrl": "/products/7793862011446.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4402",
+      "sku": "4402",
+      "barcode": "7790740608293",
+      "imageUrl": "/products/7790740608293.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4424",
+      "sku": "4424",
+      "barcode": "7790580137762",
+      "imageUrl": "/products/7790580137762.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4458",
+      "sku": "4458",
+      "barcode": "7790971002402",
+      "imageUrl": "/products/7790971002402.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4486",
+      "sku": "4486",
+      "barcode": "7790077000739",
+      "imageUrl": "/products/7790077000739.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4487",
+      "sku": "4487",
+      "barcode": "7790770602261",
+      "imageUrl": "/products/7790770602261.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4490",
+      "sku": "4490",
+      "barcode": "7790070433237",
+      "imageUrl": "/products/7790070433237.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4497",
+      "sku": "4497",
+      "barcode": "7790580660000",
+      "imageUrl": "/products/7790580660000.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4500",
+      "sku": "4500",
+      "barcode": "7790580126315",
+      "imageUrl": "/products/7790580126315.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4508",
+      "sku": "4508",
+      "barcode": "7791913000623",
+      "imageUrl": "/products/7791913000623.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4545",
+      "sku": "4545",
+      "barcode": "7790290007195",
+      "imageUrl": "/products/7790290007195.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4546",
+      "sku": "4546",
+      "barcode": "7798178470628",
+      "imageUrl": "/products/7798178470628.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4548",
+      "sku": "4548",
+      "barcode": "7794000006362",
+      "imageUrl": "/products/7794000006362.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4582",
+      "sku": "4582",
+      "barcode": "7798187212196",
+      "imageUrl": "/products/7798187212196.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4603",
+      "sku": "4603",
+      "barcode": "7798187212158",
+      "imageUrl": "/products/7798187212158.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4605",
+      "sku": "4605",
+      "barcode": "7798187212202",
+      "imageUrl": "/products/7798187212202.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4702",
+      "sku": "4702",
+      "barcode": "7792798012923",
+      "imageUrl": "/products/7792798012923.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4703",
+      "sku": "4703",
+      "barcode": "7792798009107",
+      "imageUrl": "/products/7792798009107.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4754",
+      "sku": "4754",
+      "barcode": "9002490258313",
+      "imageUrl": "/products/9002490258313.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4755",
+      "sku": "4755",
+      "barcode": "9002490100070",
+      "imageUrl": "/products/9002490100070.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4757",
+      "sku": "4757",
+      "barcode": "9002490280055",
+      "imageUrl": "/products/9002490280055.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:481",
+      "sku": "481",
+      "barcode": "7798131200620",
+      "imageUrl": "/products/7798131200620.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4845",
+      "sku": "4845",
+      "barcode": "7794000009578",
+      "imageUrl": "/products/7794000009578.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4846",
+      "sku": "4846",
+      "barcode": "7794000009554",
+      "imageUrl": "/products/7794000009554.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4847",
+      "sku": "4847",
+      "barcode": "7794000009561",
+      "imageUrl": "/products/7794000009561.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4849",
+      "sku": "4849",
+      "barcode": "78909434",
+      "imageUrl": "/products/78909434.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:4877",
+      "sku": "4877",
+      "barcode": "7790150573280",
+      "imageUrl": "/products/7790150573280.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:497",
+      "sku": "497",
+      "barcode": "7792410008655",
+      "imageUrl": "/products/7792410008655.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5001",
+      "sku": "5001",
+      "barcode": "7793890261844",
+      "imageUrl": "/products/7793890261844.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:501",
+      "sku": "501",
+      "barcode": "7792410532426",
+      "imageUrl": "/products/7792410532426.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5034",
+      "sku": "5034",
+      "barcode": "7797470197929",
+      "imageUrl": "/products/7797470197929.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:505",
+      "sku": "505",
+      "barcode": "7790577001571",
+      "imageUrl": "/products/7790577001571.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5059",
+      "sku": "5059",
+      "barcode": "7793862013235",
+      "imageUrl": "/products/7793862013235.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5060",
+      "sku": "5060",
+      "barcode": "7790368293680",
+      "imageUrl": "/products/7790368293680.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5062",
+      "sku": "5062",
+      "barcode": "7798081285180",
+      "imageUrl": "/products/7798081285180.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5094",
+      "sku": "5094",
+      "barcode": "8710103966548",
+      "imageUrl": "/products/8710103966548.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:510",
+      "sku": "510",
+      "barcode": "7790577002189",
+      "imageUrl": "/products/7790577002189.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5153",
+      "sku": "5153",
+      "barcode": "7793253006822",
+      "imageUrl": "/products/7793253006822.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5209",
+      "sku": "5209",
+      "barcode": "7798347089385",
+      "imageUrl": "/products/7798347089385.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5218",
+      "sku": "5218",
+      "barcode": "7790154008269",
+      "imageUrl": "/products/7790154008269.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5243",
+      "sku": "5243",
+      "barcode": "7791250001857",
+      "imageUrl": "/products/7791250001857.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5244",
+      "sku": "5244",
+      "barcode": "7791250003110",
+      "imageUrl": "/products/7791250003110.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5247",
+      "sku": "5247",
+      "barcode": "7791250003202",
+      "imageUrl": "/products/7791250003202.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5248",
+      "sku": "5248",
+      "barcode": "7791250002243",
+      "imageUrl": "/products/7791250002243.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5280",
+      "sku": "5280",
+      "barcode": "7790040133488",
+      "imageUrl": "/products/7790040133488.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5282",
+      "sku": "5282",
+      "barcode": "7790150441343",
+      "imageUrl": "/products/7790150441343.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5285",
+      "sku": "5285",
+      "barcode": "7790150440483",
+      "imageUrl": "/products/7790150440483.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5303",
+      "sku": "5303",
+      "barcode": "7790895006111",
+      "imageUrl": "/products/7790895006111.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5304",
+      "sku": "5304",
+      "barcode": "7790895000447",
+      "imageUrl": "/products/7790895000447.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5309",
+      "sku": "5309",
+      "barcode": "7790895000829",
+      "imageUrl": "/products/7790895000829.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5313",
+      "sku": "5313",
+      "barcode": "7790895000270",
+      "imageUrl": "/products/7790895000270.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5325",
+      "sku": "5325",
+      "barcode": "7792798010615",
+      "imageUrl": "/products/7792798010615.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5326",
+      "sku": "5326",
+      "barcode": "7792798010578",
+      "imageUrl": "/products/7792798010578.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5327",
+      "sku": "5327",
+      "barcode": "7792798010721",
+      "imageUrl": "/products/7792798010721.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:535",
+      "sku": "535",
+      "barcode": "7790036975399",
+      "imageUrl": "/products/7790036975399.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5356",
+      "sku": "5356",
+      "barcode": "7790040143364",
+      "imageUrl": "/products/7790040143364.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5359",
+      "sku": "5359",
+      "barcode": "7790150811948",
+      "imageUrl": "/products/7790150811948.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5377",
+      "sku": "5377",
+      "barcode": "7500810034477",
+      "imageUrl": "/products/7500810034477.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5381",
+      "sku": "5381",
+      "barcode": "7791905004691",
+      "imageUrl": "/products/7791905004691.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5442",
+      "sku": "5442",
+      "barcode": "7790150211953",
+      "imageUrl": "/products/7790150211953.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5443",
+      "sku": "5443",
+      "barcode": "7790150211908",
+      "imageUrl": "/products/7790150211908.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5444",
+      "sku": "5444",
+      "barcode": "7790150211939",
+      "imageUrl": "/products/7790150211939.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5446",
+      "sku": "5446",
+      "barcode": "7790150231258",
+      "imageUrl": "/products/7790150231258.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5450",
+      "sku": "5450",
+      "barcode": "7790150250570",
+      "imageUrl": "/products/7790150250570.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5451",
+      "sku": "5451",
+      "barcode": "7790480089727",
+      "imageUrl": "/products/7790480089727.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5452",
+      "sku": "5452",
+      "barcode": "7790480089710",
+      "imageUrl": "/products/7790480089710.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5453",
+      "sku": "5453",
+      "barcode": "7790480089673",
+      "imageUrl": "/products/7790480089673.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5456",
+      "sku": "5456",
+      "barcode": "7790150380161",
+      "imageUrl": "/products/7790150380161.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5458",
+      "sku": "5458",
+      "barcode": "7790150231173",
+      "imageUrl": "/products/7790150231173.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:546",
+      "sku": "546",
+      "barcode": "8023277106499",
+      "imageUrl": "/products/8023277106499.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5467",
+      "sku": "5467",
+      "barcode": "7790150240175",
+      "imageUrl": "/products/7790150240175.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5468",
+      "sku": "5468",
+      "barcode": "7790150240526",
+      "imageUrl": "/products/7790150240526.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5469",
+      "sku": "5469",
+      "barcode": "7790150396186",
+      "imageUrl": "/products/7790150396186.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5472",
+      "sku": "5472",
+      "barcode": "7790150250327",
+      "imageUrl": "/products/7790150250327.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5481",
+      "sku": "5481",
+      "barcode": "7790387800142",
+      "imageUrl": "/products/7790387800142.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5510",
+      "sku": "5510",
+      "barcode": "7790950133318",
+      "imageUrl": "/products/7790950133318.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5511",
+      "sku": "5511",
+      "barcode": "7798373230140",
+      "imageUrl": "/products/7798373230140.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5522",
+      "sku": "5522",
+      "barcode": "7791218000724",
+      "imageUrl": "/products/7791218000724.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5523",
+      "sku": "5523",
+      "barcode": "7791218000731",
+      "imageUrl": "/products/7791218000731.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5524",
+      "sku": "5524",
+      "barcode": "7793890260915",
+      "imageUrl": "/products/7793890260915.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5535",
+      "sku": "5535",
+      "barcode": "7794080001561",
+      "imageUrl": "/products/7794080001561.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5546",
+      "sku": "5546",
+      "barcode": "7790250097655",
+      "imageUrl": "/products/7790250097655.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5576",
+      "sku": "5576",
+      "barcode": "77916419",
+      "imageUrl": "/products/77916419.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5578",
+      "sku": "5578",
+      "barcode": "77916396",
+      "imageUrl": "/products/77916396.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5579",
+      "sku": "5579",
+      "barcode": "77932693",
+      "imageUrl": "/products/77932693.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5581",
+      "sku": "5581",
+      "barcode": "77916426",
+      "imageUrl": "/products/77916426.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5590",
+      "sku": "5590",
+      "barcode": "7790314063848",
+      "imageUrl": "/products/7790314063848.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5591",
+      "sku": "5591",
+      "barcode": "7790314063824",
+      "imageUrl": "/products/7790314063824.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5625",
+      "sku": "5625",
+      "barcode": "7790071070417",
+      "imageUrl": "/products/7790071070417.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5626",
+      "sku": "5626",
+      "barcode": "7798187211830",
+      "imageUrl": "/products/7798187211830.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5627",
+      "sku": "5627",
+      "barcode": "7798187211823",
+      "imageUrl": "/products/7798187211823.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5667",
+      "sku": "5667",
+      "barcode": "7793450000128",
+      "imageUrl": "/products/7793450000128.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5679",
+      "sku": "5679",
+      "barcode": "7798039590342",
+      "imageUrl": "/products/7798039590342.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5703",
+      "sku": "5703",
+      "barcode": "7790150813195",
+      "imageUrl": "/products/7790150813195.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5704",
+      "sku": "5704",
+      "barcode": "7790150812921",
+      "imageUrl": "/products/7790150812921.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5705",
+      "sku": "5705",
+      "barcode": "7790150812563",
+      "imageUrl": "/products/7790150812563.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5706",
+      "sku": "5706",
+      "barcode": "7790150812761",
+      "imageUrl": "/products/7790150812761.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5707",
+      "sku": "5707",
+      "barcode": "7790150812747",
+      "imageUrl": "/products/7790150812747.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5708",
+      "sku": "5708",
+      "barcode": "7790150812549",
+      "imageUrl": "/products/7790150812549.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5710",
+      "sku": "5710",
+      "barcode": "7790150811962",
+      "imageUrl": "/products/7790150811962.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5715",
+      "sku": "5715",
+      "barcode": "7790310983270",
+      "imageUrl": "/products/7790310983270.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5739",
+      "sku": "5739",
+      "barcode": "7793890258691",
+      "imageUrl": "/products/7793890258691.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5745",
+      "sku": "5745",
+      "barcode": "7891035040276",
+      "imageUrl": "/products/7891035040276.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5746",
+      "sku": "5746",
+      "barcode": "7791130001731",
+      "imageUrl": "/products/7791130001731.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5747",
+      "sku": "5747",
+      "barcode": "7791130001786",
+      "imageUrl": "/products/7791130001786.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5755",
+      "sku": "5755",
+      "barcode": "7790590016361",
+      "imageUrl": "/products/7790590016361.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5761",
+      "sku": "5761",
+      "barcode": "7791290794955",
+      "imageUrl": "/products/7791290794955.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5779",
+      "sku": "5779",
+      "barcode": "7798000212976",
+      "imageUrl": "/products/7798000212976.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5805",
+      "sku": "5805",
+      "barcode": "7790314003233",
+      "imageUrl": "/products/7790314003233.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:583",
+      "sku": "583",
+      "barcode": "7790580131470",
+      "imageUrl": "/products/7790580131470.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5833",
+      "sku": "5833",
+      "barcode": "7792410527880",
+      "imageUrl": "/products/7792410527880.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:584",
+      "sku": "584",
+      "barcode": "7790580131487",
+      "imageUrl": "/products/7790580131487.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:585",
+      "sku": "585",
+      "barcode": "7790580131494",
+      "imageUrl": "/products/7790580131494.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5851",
+      "sku": "5851",
+      "barcode": "7790070509048",
+      "imageUrl": "/products/7790070509048.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5853",
+      "sku": "5853",
+      "barcode": "7790070509123",
+      "imageUrl": "/products/7790070509123.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5857",
+      "sku": "5857",
+      "barcode": "7790150260821",
+      "imageUrl": "/products/7790150260821.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5858",
+      "sku": "5858",
+      "barcode": "7790150260661",
+      "imageUrl": "/products/7790150260661.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:5881",
+      "sku": "5881",
+      "barcode": "7793670000670",
+      "imageUrl": "/products/7793670000670.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:591",
+      "sku": "591",
+      "barcode": "77915818",
+      "imageUrl": "/products/77915818.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6",
+      "sku": "6",
+      "barcode": "7791813444411",
+      "imageUrl": "/products/7791813444411.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:600",
+      "sku": "600",
+      "barcode": "7790580126254",
+      "imageUrl": "/products/7790580126254.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6039",
+      "sku": "6039",
+      "barcode": "7790990000632",
+      "imageUrl": "/products/7790990000632.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:621",
+      "sku": "621",
+      "barcode": "7622201457457",
+      "imageUrl": "/products/7622201457457.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:630",
+      "sku": "630",
+      "barcode": "7790150430392",
+      "imageUrl": "/products/7790150430392.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6363",
+      "sku": "6363",
+      "barcode": "7792798013951",
+      "imageUrl": "/products/7792798013951.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6369",
+      "sku": "6369",
+      "barcode": "7791813777403",
+      "imageUrl": "/products/7791813777403.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6371",
+      "sku": "6371",
+      "barcode": "7798062548716",
+      "imageUrl": "/products/7798062548716.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6372",
+      "sku": "6372",
+      "barcode": "7798062548686",
+      "imageUrl": "/products/7798062548686.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6373",
+      "sku": "6373",
+      "barcode": "7798062540260",
+      "imageUrl": "/products/7798062540260.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6380",
+      "sku": "6380",
+      "barcode": "7791600192488",
+      "imageUrl": "/products/7791600192488.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6386",
+      "sku": "6386",
+      "barcode": "7791600030346",
+      "imageUrl": "/products/7791600030346.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6391",
+      "sku": "6391",
+      "barcode": "7791519200021",
+      "imageUrl": "/products/7791519200021.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6427",
+      "sku": "6427",
+      "barcode": "7790411001958",
+      "imageUrl": "/products/7790411001958.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6428",
+      "sku": "6428",
+      "barcode": "7792280005631",
+      "imageUrl": "/products/7792280005631.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6429",
+      "sku": "6429",
+      "barcode": "7792280005648",
+      "imageUrl": "/products/7792280005648.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6443",
+      "sku": "6443",
+      "barcode": "7792180141095",
+      "imageUrl": "/products/7792180141095.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6447",
+      "sku": "6447",
+      "barcode": "7790070431554",
+      "imageUrl": "/products/7790070431554.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6448",
+      "sku": "6448",
+      "barcode": "7790070431745",
+      "imageUrl": "/products/7790070431745.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6450",
+      "sku": "6450",
+      "barcode": "7790070562067",
+      "imageUrl": "/products/7790070562067.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6451",
+      "sku": "6451",
+      "barcode": "7790070562074",
+      "imageUrl": "/products/7790070562074.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6452",
+      "sku": "6452",
+      "barcode": "7798061190664",
+      "imageUrl": "/products/7798061190664.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6471",
+      "sku": "6471",
+      "barcode": "7790170901872",
+      "imageUrl": "/products/7790170901872.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6472",
+      "sku": "6472",
+      "barcode": "7790150101476",
+      "imageUrl": "/products/7790150101476.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6476",
+      "sku": "6476",
+      "barcode": "7790150437803",
+      "imageUrl": "/products/7790150437803.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6483",
+      "sku": "6483",
+      "barcode": "7790150432440",
+      "imageUrl": "/products/7790150432440.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:649",
+      "sku": "649",
+      "barcode": "7792200000319",
+      "imageUrl": "/products/7792200000319.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6501",
+      "sku": "6501",
+      "barcode": "7793862010654",
+      "imageUrl": "/products/7793862010654.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6502",
+      "sku": "6502",
+      "barcode": "7798081285494",
+      "imageUrl": "/products/7798081285494.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6504",
+      "sku": "6504",
+      "barcode": "8023277130661",
+      "imageUrl": "/products/8023277130661.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6505",
+      "sku": "6505",
+      "barcode": "8023277144330",
+      "imageUrl": "/products/8023277144330.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:651",
+      "sku": "651",
+      "barcode": "7792200000777",
+      "imageUrl": "/products/7792200000777.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6518",
+      "sku": "6518",
+      "barcode": "7790742437303",
+      "imageUrl": "/products/7790742437303.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6522",
+      "sku": "6522",
+      "barcode": "7794000009714",
+      "imageUrl": "/products/7794000009714.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6524",
+      "sku": "6524",
+      "barcode": "7790520028945",
+      "imageUrl": "/products/7790520028945.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6527",
+      "sku": "6527",
+      "barcode": "7791905004189",
+      "imageUrl": "/products/7791905004189.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6528",
+      "sku": "6528",
+      "barcode": "7791905023760",
+      "imageUrl": "/products/7791905023760.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6529",
+      "sku": "6529",
+      "barcode": "7791905004226",
+      "imageUrl": "/products/7791905004226.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6533",
+      "sku": "6533",
+      "barcode": "7792129000346",
+      "imageUrl": "/products/7792129000346.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6534",
+      "sku": "6534",
+      "barcode": "7792129003705",
+      "imageUrl": "/products/7792129003705.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6537",
+      "sku": "6537",
+      "barcode": "7840050009737",
+      "imageUrl": "/products/7840050009737.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6538",
+      "sku": "6538",
+      "barcode": "7891991304870",
+      "imageUrl": "/products/7891991304870.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6539",
+      "sku": "6539",
+      "barcode": "7795930000567",
+      "imageUrl": "/products/7795930000567.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:654",
+      "sku": "654",
+      "barcode": "7790070418425",
+      "imageUrl": "/products/7790070418425.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6540",
+      "sku": "6540",
+      "barcode": "7798259439506",
+      "imageUrl": "/products/7798259439506.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:655",
+      "sku": "655",
+      "barcode": "7790070418463",
+      "imageUrl": "/products/7790070418463.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6558",
+      "sku": "6558",
+      "barcode": "7790538009707",
+      "imageUrl": "/products/7790538009707.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6560",
+      "sku": "6560",
+      "barcode": "7790580131548",
+      "imageUrl": "/products/7790580131548.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6578",
+      "sku": "6578",
+      "barcode": "7790480089741",
+      "imageUrl": "/products/7790480089741.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6579",
+      "sku": "6579",
+      "barcode": "7790480089734",
+      "imageUrl": "/products/7790480089734.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6582",
+      "sku": "6582",
+      "barcode": "7794000005204",
+      "imageUrl": "/products/7794000005204.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:659",
+      "sku": "659",
+      "barcode": "7790971000194",
+      "imageUrl": "/products/7790971000194.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6593",
+      "sku": "6593",
+      "barcode": "7798124362496",
+      "imageUrl": "/products/7798124362496.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6594",
+      "sku": "6594",
+      "barcode": "7798124362489",
+      "imageUrl": "/products/7798124362489.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:660",
+      "sku": "660",
+      "barcode": "7790971001917",
+      "imageUrl": "/products/7790971001917.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6603",
+      "sku": "6603",
+      "barcode": "8992741970549",
+      "imageUrl": "/products/8992741970549.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6606",
+      "sku": "6606",
+      "barcode": "7790040153431",
+      "imageUrl": "/products/7790040153431.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6607",
+      "sku": "6607",
+      "barcode": "7790040153455",
+      "imageUrl": "/products/7790040153455.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6611",
+      "sku": "6611",
+      "barcode": "7792798015474",
+      "imageUrl": "/products/7792798015474.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6612",
+      "sku": "6612",
+      "barcode": "8023277137028",
+      "imageUrl": "/products/8023277137028.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6622",
+      "sku": "6622",
+      "barcode": "7790598010972",
+      "imageUrl": "/products/7790598010972.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6623",
+      "sku": "6623",
+      "barcode": "7790598000195",
+      "imageUrl": "/products/7790598000195.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6624",
+      "sku": "6624",
+      "barcode": "7790598000133",
+      "imageUrl": "/products/7790598000133.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6625",
+      "sku": "6625",
+      "barcode": "7790598000430",
+      "imageUrl": "/products/7790598000430.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6627",
+      "sku": "6627",
+      "barcode": "7798049540566",
+      "imageUrl": "/products/7798049540566.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6640",
+      "sku": "6640",
+      "barcode": "7790250097679",
+      "imageUrl": "/products/7790250097679.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6642",
+      "sku": "6642",
+      "barcode": "7790740001988",
+      "imageUrl": "/products/7790740001988.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6647",
+      "sku": "6647",
+      "barcode": "78926523",
+      "imageUrl": "/products/78926523.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6648",
+      "sku": "6648",
+      "barcode": "7791293051963",
+      "imageUrl": "/products/7791293051963.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6649",
+      "sku": "6649",
+      "barcode": "7791293050980",
+      "imageUrl": "/products/7791293050980.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6650",
+      "sku": "6650",
+      "barcode": "7791293050904",
+      "imageUrl": "/products/7791293050904.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6651",
+      "sku": "6651",
+      "barcode": "7898422744335",
+      "imageUrl": "/products/7898422744335.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6652",
+      "sku": "6652",
+      "barcode": "7794626013430",
+      "imageUrl": "/products/7794626013430.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6653",
+      "sku": "6653",
+      "barcode": "7790895000225",
+      "imageUrl": "/products/7790895000225.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6654",
+      "sku": "6654",
+      "barcode": "7790895000331",
+      "imageUrl": "/products/7790895000331.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6655",
+      "sku": "6655",
+      "barcode": "7790895011511",
+      "imageUrl": "/products/7790895011511.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6656",
+      "sku": "6656",
+      "barcode": "7790895000218",
+      "imageUrl": "/products/7790895000218.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6657",
+      "sku": "6657",
+      "barcode": "7898953990157",
+      "imageUrl": "/products/7898953990157.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:666",
+      "sku": "666",
+      "barcode": "7793890261233",
+      "imageUrl": "/products/7793890261233.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6660",
+      "sku": "6660",
+      "barcode": "7793100151224",
+      "imageUrl": "/products/7793100151224.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6666",
+      "sku": "6666",
+      "barcode": "7790310988459",
+      "imageUrl": "/products/7790310988459.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6671",
+      "sku": "6671",
+      "barcode": "7790150161500",
+      "imageUrl": "/products/7790150161500.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6672",
+      "sku": "6672",
+      "barcode": "7790150150276",
+      "imageUrl": "/products/7790150150276.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6673",
+      "sku": "6673",
+      "barcode": "7790070431318",
+      "imageUrl": "/products/7790070431318.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:6674",
+      "sku": "6674",
+      "barcode": "7790070431271",
+      "imageUrl": "/products/7790070431271.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:672",
+      "sku": "672",
+      "barcode": "7790290101756",
+      "imageUrl": "/products/7790290101756.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:676",
+      "sku": "676",
+      "barcode": "7790045825487",
+      "imageUrl": "/products/7790045825487.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:677",
+      "sku": "677",
+      "barcode": "7790045825470",
+      "imageUrl": "/products/7790045825470.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:681",
+      "sku": "681",
+      "barcode": "77985996",
+      "imageUrl": "/products/77985996.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:711",
+      "sku": "711",
+      "barcode": "77961815",
+      "imageUrl": "/products/77961815.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:717",
+      "sku": "717",
+      "barcode": "7790895003950",
+      "imageUrl": "/products/7790895003950.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:719",
+      "sku": "719",
+      "barcode": "7790895003875",
+      "imageUrl": "/products/7790895003875.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:727",
+      "sku": "727",
+      "barcode": "7790387120370",
+      "imageUrl": "/products/7790387120370.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:728",
+      "sku": "728",
+      "barcode": "7792798005888",
+      "imageUrl": "/products/7792798005888.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:729",
+      "sku": "729",
+      "barcode": "7792798015061",
+      "imageUrl": "/products/7792798015061.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:737",
+      "sku": "737",
+      "barcode": "7798130959376",
+      "imageUrl": "/products/7798130959376.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:770",
+      "sku": "770",
+      "barcode": "7793147118822",
+      "imageUrl": "/products/7793147118822.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:775",
+      "sku": "775",
+      "barcode": "7791519200069",
+      "imageUrl": "/products/7791519200069.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:794",
+      "sku": "794",
+      "barcode": "7790380023401",
+      "imageUrl": "/products/7790380023401.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:8",
+      "sku": "8",
+      "barcode": "7791813777021",
+      "imageUrl": "/products/7791813777021.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:807",
+      "sku": "807",
+      "barcode": "7622201818654",
+      "imageUrl": "/products/7622201818654.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:830",
+      "sku": "830",
+      "barcode": "7790150100486",
+      "imageUrl": "/products/7790150100486.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:832",
+      "sku": "832",
+      "barcode": "7790150080825",
+      "imageUrl": "/products/7790150080825.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:833",
+      "sku": "833",
+      "barcode": "7790150080801",
+      "imageUrl": "/products/7790150080801.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:841",
+      "sku": "841",
+      "barcode": "7790170902008",
+      "imageUrl": "/products/7790170902008.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:843",
+      "sku": "843",
+      "barcode": "7790170903937",
+      "imageUrl": "/products/7790170903937.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:857",
+      "sku": "857",
+      "barcode": "7891000345399",
+      "imageUrl": "/products/7891000345399.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:859",
+      "sku": "859",
+      "barcode": "7891000345344",
+      "imageUrl": "/products/7891000345344.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:864",
+      "sku": "864",
+      "barcode": "7794000008601",
+      "imageUrl": "/products/7794000008601.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:878",
+      "sku": "878",
+      "barcode": "7793862010890",
+      "imageUrl": "/products/7793862010890.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:883",
+      "sku": "883",
+      "barcode": "7791200200798",
+      "imageUrl": "/products/7791200200798.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:887",
+      "sku": "887",
+      "barcode": "7790150435380",
+      "imageUrl": "/products/7790150435380.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:888",
+      "sku": "888",
+      "barcode": "7790150436080",
+      "imageUrl": "/products/7790150436080.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:895",
+      "sku": "895",
+      "barcode": "7790150160657",
+      "imageUrl": "/products/7790150160657.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:906",
+      "sku": "906",
+      "barcode": "7622202288197",
+      "imageUrl": "/products/7622202288197.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:907",
+      "sku": "907",
+      "barcode": "7622202288319",
+      "imageUrl": "/products/7622202288319.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:927",
+      "sku": "927",
+      "barcode": "7790290008192",
+      "imageUrl": "/products/7790290008192.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:93",
+      "sku": "93",
+      "barcode": "7790895640469",
+      "imageUrl": "/products/7790895640469.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:941",
+      "sku": "941",
+      "barcode": "7790150440360",
+      "imageUrl": "/products/7790150440360.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:948",
+      "sku": "948",
+      "barcode": "7791293050898",
+      "imageUrl": "/products/7791293050898.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:958",
+      "sku": "958",
+      "barcode": "8023277151345",
+      "imageUrl": "/products/8023277151345.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:959",
+      "sku": "959",
+      "barcode": "8710103907053",
+      "imageUrl": "/products/8710103907053.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:97",
+      "sku": "97",
+      "barcode": "7790895643835",
+      "imageUrl": "/products/7790895643835.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:974",
+      "sku": "974",
+      "barcode": "7790895004926",
+      "imageUrl": "/products/7790895004926.webp",
+      "method": "ean-catalog"
+    },
+    {
+      "productId": "sku:985",
+      "sku": "985",
+      "barcode": "7790895646560",
+      "imageUrl": "/products/7790895646560.webp",
+      "method": "ean-catalog"
+    }
+  ]
+}

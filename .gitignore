@@ -13,12 +13,16 @@ __v0_jsx-dev-runtime.ts
 
 # Build output
 node_modules
+.pnpm-store/
 .next/
 *.tsbuildinfo
+__pycache__/
+*.py[cod]
 
 # Logs & temporary artifacts
 *.log
 .eslintcache
+_tmp/
 
 # OS / editor
 .DS_Store

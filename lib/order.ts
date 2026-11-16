@@ -1,5 +1,4 @@
 import { formatMoney } from '@/lib/utils'
-import { MARKET_CONFIG } from '@/lib/market-config'
 import type { CheckoutData } from '@/lib/checkout'
 import { deliveryZoneForNeighborhood } from '@/lib/delivery-neighborhoods'
 import type { Product } from '@/lib/market-data'
@@ -32,7 +31,7 @@ function buildProductosSection(items: OrderLine[]): string {
   return `\n\nPRODUCTOS\n\n${lines.join('\n\n')}`
 }
 
-export function buildWhatsAppMessage(options: {
+export function buildGocuotasDemoMessage(options: {
   orderNumber: string
   data: CheckoutData
   items: OrderLine[]
@@ -60,17 +59,7 @@ export function buildWhatsAppMessage(options: {
   const aviso = '\n\nLos beneficios correspondientes se verificarán al confirmar el pedido.'
 
   return (
-    'Hola, quiero realizar un pedido en Market Mutual.\n\nPEDIDO MARKET MUTUAL'
+    'Hola, quiero coordinar mi compra con GOcuotas.\n\nPEDIDO DEMO MARKET MUTUAL'
     + numero + cliente + entrega + buildProductosSection(items) + total + observaciones + aviso
   )
-}
-
-/**
- * Construye el enlace `https://wa.me/`. Devuelve `null` si el número de
- * WhatsApp no está configurado en MARKET_CONFIG.
- */
-export function buildWhatsAppUrl(message: string): string | null {
-  const number = MARKET_CONFIG.whatsappNumber
-  if (!number) return null
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`
 }

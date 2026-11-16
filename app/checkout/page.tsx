@@ -51,6 +51,10 @@ export default function CheckoutPage() {
         </div>
       </header>
 
+      <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-bold text-amber-800">
+        CHECKOUT DEMO · No se procesan pagos ni se envían mensajes reales.
+      </div>
+
       {cartCount === 0 ? (
         <section className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center lg:px-8">
           <span className="flex size-16 items-center justify-center rounded-2xl bg-[#e7f2fc] text-[#1456a0]"><ShoppingBag /></span>

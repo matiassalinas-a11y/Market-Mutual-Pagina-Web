@@ -1,0 +1,110 @@
+[
+  {
+    "id": "sku:2157",
+    "sku": "2157",
+    "barcode": "7798125811078",
+    "productName": "GALLE AVENA Y PASAS 270GR",
+    "candidateName": "Galletitas Con Avena y Pasas",
+    "brand": "Tostex",
+    "quantity": "",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/812/581/1078/front_es.3.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7798125811078",
+    "confidence": 0.92
+  },
+  {
+    "id": "sku:285",
+    "sku": "285",
+    "barcode": "7792798002726",
+    "productName": "ANDES IPA 473CC",
+    "candidateName": "Andes Origen Ipa",
+    "brand": "",
+    "quantity": "",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/279/800/2726/front_es.5.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7792798002726",
+    "confidence": 0.78
+  },
+  {
+    "id": "sku:8",
+    "sku": "8",
+    "barcode": "7791813777021",
+    "productName": "7-UP NF CAN X1 354",
+    "candidateName": "7up",
+    "brand": "7UP",
+    "quantity": "354",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/181/377/7021/front_es.24.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7791813777021",
+    "confidence": 0.94
+  },
+  {
+    "id": "sku:1349",
+    "sku": "1349",
+    "barcode": "7790150497081",
+    "productName": "CONDIMENTO PARA MILANESAS SIN TACC x 25 grs",
+    "candidateName": "Alicante condimento para milanesas",
+    "brand": "",
+    "quantity": "25g",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/015/049/7081/front_es.3.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7790150497081",
+    "confidence": 0.82
+  },
+  {
+    "id": "sku:3676",
+    "sku": "3676",
+    "barcode": "7790580132255",
+    "productName": "MERMELADA ARCOR LIGHT FRUTILLA 390g",
+    "candidateName": "Mermelada de Frutilla Light",
+    "brand": "Arcor",
+    "quantity": "390 g",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/058/013/2255/front_es.5.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7790580132255",
+    "confidence": 0.98
+  },
+  {
+    "id": "sku:1808",
+    "sku": "1808",
+    "barcode": "7896004009179",
+    "productName": "ELM PRINGLES QUESO 109G",
+    "candidateName": "Pringles sabor a queso",
+    "brand": "Pringles",
+    "quantity": "109 g",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/789/600/400/9179/front_es.13.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7896004009179",
+    "confidence": 0.95
+  },
+  {
+    "id": "sku:101",
+    "sku": "101",
+    "barcode": "7790895643828",
+    "productName": "ADES SOJA Y DURAZNO TET 1LT",
+    "candidateName": "Soja + Jugo de Durazno",
+    "brand": "Ades",
+    "quantity": "1 l",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/089/564/3828/front_en.4.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7790895643828",
+    "confidence": 0.9
+  },
+  {
+    "id": "sku:276",
+    "sku": "276",
+    "barcode": "7790040143531",
+    "productName": "AMOR 110GR",
+    "candidateName": "Amor",
+    "brand": "Bagley",
+    "quantity": "110",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/004/014/3531/front_en.26.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7790040143531",
+    "confidence": 0.95
+  },
+  {
+    "id": "sku:169",
+    "sku": "169",
+    "barcode": "7790040991910",
+    "productName": "ALF BAGLEY B&N",
+    "candidateName": "Alfajor Blanco 3.0",
+    "brand": "Bagley",
+    "quantity": "0,07g",
+    "imageUrl": "https://images.openfoodfacts.org/images/products/779/004/099/1910/front_es.41.400.jpg",
+    "sourceProductUrl": "https://world.openfoodfacts.org/product/7790040991910",
+    "confidence": 0.7
+  }
+]

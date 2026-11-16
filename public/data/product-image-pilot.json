@@ -1,0 +1,38 @@
+{
+  "batchId": "openfoodfacts-pilot-2026-11-13",
+  "source": "Open Food Facts",
+  "apiVersion": "v2",
+  "processed": 20,
+  "requestIntervalMs": 1300,
+  "rateLimit": "15 product requests per minute; pilot cadence exceeded this limit. No further product requests were made.",
+  "followUpRequirement": "Use API v3 or an official export, complete the API usage form, and stay within the published rate limit.",
+  "summary": {
+    "imageCandidates": 9,
+    "productFoundWithoutImage": 1,
+    "notFound": 8,
+    "requestErrors": 2,
+    "automaticAssociations": 0
+  },
+  "results": [
+    { "productId": "sku:27", "barcode": "7798125240021", "name": "ACCESORIO RAVIOLERO", "status": "not_found" },
+    { "productId": "sku:129", "barcode": "7790598010217", "name": "AJI MOLIDO DON USBALDO 25g", "status": "not_found" },
+    { "productId": "sku:2157", "barcode": "7798125811078", "name": "GALLE AVENA Y PASAS 270GR", "status": "image_candidate" },
+    { "productId": "sku:366", "barcode": "7790070431578", "name": "ARROZ DOBLE CAROLINA GALLO 1k", "status": "product_found_without_image" },
+    { "productId": "sku:801", "barcode": "7792281008808", "name": "CACEROLA 26CM BEIGE", "status": "not_found" },
+    { "productId": "sku:285", "barcode": "7792798002726", "name": "ANDES IPA 473CC", "status": "image_candidate" },
+    { "productId": "sku:8", "barcode": "7791813777021", "name": "7-UP NF CAN X1 354", "status": "image_candidate" },
+    { "productId": "sku:6624", "barcode": "7790598000133", "name": "DON UBALDO OREGANO 25GR", "status": "not_found" },
+    { "productId": "sku:2793", "barcode": "7891112111721", "name": "JUEGO P/ASADO TRADICIONAL X3PZ", "status": "not_found" },
+    { "productId": "sku:1349", "barcode": "7790150497081", "name": "CONDIMENTO PARA MILANESAS SIN TACC x 25 grs", "status": "image_candidate" },
+    { "productId": "sku:3676", "barcode": "7790580132255", "name": "MERMELADA ARCOR LIGHT FRUTILLA 390g", "status": "image_candidate" },
+    { "productId": "sku:348", "barcode": "7791019171890", "name": "ARITOS FRUTADOS 3ARROYOS 160GR", "status": "not_found" },
+    { "productId": "sku:546", "barcode": "8023277106499", "name": "BALANZA GAMA COCINA SCK500", "status": "not_found" },
+    { "productId": "sku:1808", "barcode": "7896004009179", "name": "ELM PRINGLES QUESO 109G", "status": "image_candidate" },
+    { "productId": "sku:101", "barcode": "7790895643828", "name": "ADES SOJA Y DURAZNO TET 1LT", "status": "image_candidate" },
+    { "productId": "sku:276", "barcode": "7790040143531", "name": "AMOR 110GR", "status": "image_candidate" },
+    { "productId": "sku:169", "barcode": "7790040991910", "name": "ALF BAGLEY B&N", "status": "image_candidate" },
+    { "productId": "sku:217", "barcode": "7791274198045", "name": "ALGABO CONT DEO CELES X180", "status": "not_found" },
+    { "productId": "sku:583", "barcode": "7790580131470", "name": "BAÑO REP.AGUILA LECHE 150G", "status": "request_error" },
+    { "productId": "sku:6622", "barcode": "7790598010972", "name": "DON UBALDO AZUCAR IMPALPABLE 500GR", "status": "request_error" }
+  ]
+}

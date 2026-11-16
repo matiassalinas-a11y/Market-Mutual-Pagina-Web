@@ -1,14 +1,12 @@
 import { Analytics } from '@vercel/analytics/next'
-import { Poppins } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import { CartProvider } from '@/components/market/cart-store'
+import { CatalogProvider } from '@/components/market/catalog-store'
 import './globals.css'
-
-const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
   title: 'Market Mutual | Comprá online',
-  description: 'Armá tu pedido online en Market Mutual y coordiná la entrega por WhatsApp.',
+  description: 'Prototipo local del catálogo y checkout de Market Mutual.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -44,8 +42,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${poppins.variable} antialiased`}>
-        <CartProvider>{children}</CartProvider>
+      <body className="antialiased">
+        <CatalogProvider>
+          <CartProvider>{children}</CartProvider>
+        </CatalogProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

@@ -1,13 +1,13 @@
 'use client'
 
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import { products } from '@/lib/market-data'
+import { useCatalog } from '@/components/market/catalog-store'
 import type { Product } from '@/lib/market-data'
 
-const STORAGE_KEY = 'market-mutual-cart-v1'
+const STORAGE_KEY = 'market-mutual-cart-v2'
 
-type Cart = Record<number, number>
+type Cart = Record<string, number>
 
 type CartContextValue = {
   cart: Cart
@@ -15,10 +15,12 @@ type CartContextValue = {
   cartItems: Product[]
   cartCount: number
   subtotal: number
-  addToCart: (productId: number) => void
-  updateQuantity: (productId: number, quantity: number) => void
-  removeFromCart: (productId: number) => void
+  cartNotice: string | null
+  addToCart: (productId: string) => void
+  updateQuantity: (productId: string, quantity: number) => void
+  removeFromCart: (productId: string) => void
   clearCart: () => void
+  clearCartNotice: () => void
 }
 
 const CartContext = createContext<CartContextValue | undefined>(undefined)
@@ -43,12 +45,14 @@ function loadCart(): Cart {
 }
 
 export function CartProvider({ children }: { children: ReactNode }) {
+  const { products, ready: catalogReady } = useCatalog()
   const [cart, setCart] = useState<Cart>(loadCart)
+  const [cartNotice, setCartNotice] = useState<string | null>(null)
   // `ready` evita errores de hydration: tanto el servidor como el primer render
   // del cliente parten con ready=false (no se muestra UI dependiente del carrito).
   // Tras el primer efecto (solo client) se marca ready, y el carrito ya fue
   // cargado de forma perezosa por loadCart() al inicializar el estado.
-  const [ready, setReady] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     // Marcar el carrito como listo únicamente tras el montaje del cliente.
@@ -56,8 +60,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     // tanto servidor como primer render parten con ready=false para no generar
     // desajuste de hydration, y la UI dependiente del carrito se muestra recién acá.
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setReady(true)
+    setMounted(true)
   }, [])
+
+  const ready = mounted && catalogReady
 
   useEffect(() => {
     if (!ready) return
@@ -68,22 +74,65 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, [cart, ready])
 
-  const addToCart = (productId: number) => {
-    setCart((current) => ({ ...current, [productId]: (current[productId] || 0) + 1 }))
+  useEffect(() => {
+    if (!ready) return
+    const productMap = new Map(products.map((product) => [product.id, product]))
+    // El catálogo persistido es una fuente externa: al reemplazarlo, se descartan
+    // referencias del carrito que ya no existen o superan el stock importado.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCart((current) => {
+      let changed = false
+      const next: Cart = {}
+      Object.entries(current).forEach(([productId, quantity]) => {
+        const product = productMap.get(productId)
+        if (!product || !product.available) {
+          changed = true
+          return
+        }
+        const allowed = product.stock == null ? quantity : Math.min(quantity, product.stock)
+        if (allowed !== quantity) changed = true
+        if (allowed > 0) next[productId] = allowed
+      })
+      return changed ? next : current
+    })
+  }, [products, ready])
+
+  const addToCart = (productId: string) => {
+    const product = products.find((item) => item.id === productId)
+    if (!product?.available) return
+    if (product.stock != null && (cart[productId] ?? 0) >= product.stock) {
+      setCartNotice('No podés agregar más unidades de este producto.')
+      return
+    }
+    setCartNotice(null)
+    setCart((current) => {
+      const nextQuantity = (current[productId] || 0) + 1
+      const quantity = product.stock == null ? nextQuantity : Math.min(nextQuantity, product.stock)
+      return { ...current, [productId]: quantity }
+    })
   }
 
-  const updateQuantity = (productId: number, quantity: number) => {
+  const updateQuantity = (productId: string, quantity: number) => {
+    const product = products.find((item) => item.id === productId)
+    if (product?.stock != null && quantity > product.stock) {
+      setCartNotice('No podés agregar más unidades de este producto.')
+      quantity = product.stock
+    } else {
+      setCartNotice(null)
+    }
     setCart((current) => {
       if (quantity <= 0) {
         const next = { ...current }
         delete next[productId]
         return next
       }
-      return { ...current, [productId]: quantity }
+      const allowed = product?.stock == null ? quantity : Math.min(quantity, product.stock)
+      return { ...current, [productId]: allowed }
     })
   }
 
-  const removeFromCart = (productId: number) => {
+  const removeFromCart = (productId: string) => {
+    setCartNotice(null)
     setCart((current) => {
       const next = { ...current }
       delete next[productId]
@@ -91,9 +140,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     })
   }
 
-  const clearCart = () => setCart({})
+  const clearCart = () => {
+    setCart({})
+    setCartNotice(null)
+  }
 
-  const cartItems = products.filter((product) => cart[product.id] != null)
+  const cartItems = useMemo(() => products.filter((product) => cart[product.id] != null), [products, cart])
   const cartCount = Object.values(cart).reduce((sum, quantity) => sum + quantity, 0)
   const subtotal = cartItems.reduce((sum, product) => sum + product.price * cart[product.id], 0)
 
@@ -103,10 +155,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
     cartItems,
     cartCount,
     subtotal,
+    cartNotice,
     addToCart,
     updateQuantity,
     removeFromCart,
     clearCart,
+    clearCartNotice: () => setCartNotice(null),
   }
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>

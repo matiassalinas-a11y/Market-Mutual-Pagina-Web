@@ -2,7 +2,6 @@
 
 import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { formatMoney } from '@/lib/utils'
 import { useCart } from '@/components/market/cart-store'
@@ -14,7 +13,7 @@ type CartDrawerProps = {
 
 export function CartDrawer({ open, onClose }: CartDrawerProps) {
   const router = useRouter()
-  const { cart, cartItems, cartCount, subtotal, updateQuantity, removeFromCart } = useCart()
+  const { cart, cartItems, cartCount, subtotal, cartNotice, clearCartNotice, updateQuantity, removeFromCart } = useCart()
 
   if (!open) return null
 
@@ -31,6 +30,7 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
           <div><p className="text-xs font-bold uppercase tracking-widest text-[#2581d2]">Tu pedido</p><h2 className="mt-1 text-xl font-bold text-[#12355f]">Carrito <span className="text-slate-400">({cartCount})</span></h2></div>
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar carrito"><X /></Button>
         </div>
+        {cartNotice && <button type="button" onClick={clearCartNotice} className="mt-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-left text-xs font-semibold text-amber-800" role="status">{cartNotice} <span className="ml-1 underline">Cerrar</span></button>}
         <div className="flex-1 overflow-y-auto py-5">
           {cartItems.length === 0 ? (
             <div className="flex h-full flex-col items-center justify-center text-center"><span className="flex size-16 items-center justify-center rounded-2xl bg-[#e7f2fc] text-[#1456a0]"><ShoppingBag /></span><h3 className="mt-4 font-bold text-[#12355f]">Tu carrito está vacío</h3><p className="mt-1 text-sm text-slate-500">Sumá productos para armar tu pedido.</p></div>
@@ -38,7 +38,9 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
             <div className="flex flex-col gap-4">
               {cartItems.map((product) => (
                 <div key={product.id} className="flex gap-3">
-                  <Image src={product.image} alt="" width={64} height={64} className="size-16 rounded-xl object-cover" />
+                  {/* Las imágenes importadas pueden venir de cualquier proveedor; se usa img en este prototipo local. */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={product.image || '/placeholder-product.svg'} alt="" className="size-16 rounded-xl bg-white object-contain object-center p-1" />
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-bold text-[#16385f]">{product.name}</p>
                     <p className="mt-1 text-sm font-semibold text-[#1456a0]">{formatMoney(product.price)}</p>

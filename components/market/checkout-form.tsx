@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { CreditCard, MessageCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/components/market/cart-store'
 import { NeighborhoodCombobox } from '@/components/market/neighborhood-combobox'
@@ -27,7 +28,7 @@ const inputClass =
 
 const labelClass = 'text-sm font-semibold text-[#12355f]'
 
-const ERROR_FIELDS: readonly CheckoutField[] = ['name', 'phone', 'address', 'barrio', 'zone']
+const ERROR_FIELDS: readonly CheckoutField[] = ['name', 'phone', 'address', 'barrio', 'zone', 'paymentMethod']
 
 function isErrorField(field: string): field is CheckoutField {
   return ERROR_FIELDS.some((errorField) => errorField === field)
@@ -137,6 +138,22 @@ export function CheckoutForm({ onReview }: CheckoutFormProps) {
           <label htmlFor="checkout-observations" className={labelClass}>Observaciones <span className="text-xs text-slate-400">(opcional)</span></label>
           <textarea id="checkout-observations" value={data.observations} onChange={(event) => setField('observations', event.target.value)} className="min-h-20 w-full rounded-xl border bg-white px-3 py-2 text-sm text-[#16385f] outline-none transition focus:border-[#1456a0] focus:ring-2 focus:ring-[#1456a0]/25" placeholder="Algún detalle para la entrega..." rows={3} />
         </div>
+
+        <fieldset className="flex flex-col gap-2">
+          <legend className={labelClass}>Forma de pago <span className="text-red-600">*</span></legend>
+          <p className="text-xs text-slate-500">Simulación para presentación: no se procesa ningún pago real.</p>
+          <label className={`flex cursor-pointer gap-3 rounded-xl border p-4 transition ${data.paymentMethod === 'mercado_pago' ? 'border-[#2581d2] bg-[#eaf4fd] ring-2 ring-[#2581d2]/20' : 'border-slate-200 hover:border-slate-300'}`}>
+            <input type="radio" name="paymentMethod" value="mercado_pago" checked={data.paymentMethod === 'mercado_pago'} onChange={() => setField('paymentMethod', 'mercado_pago')} className="mt-1" />
+            <CreditCard className="mt-0.5 size-5 shrink-0 text-[#1456a0]" aria-hidden="true" />
+            <span><strong className="block text-sm text-[#12355f]">Mercado Pago · DEMO</strong><span className="mt-1 block text-xs leading-5 text-slate-600">Pagá online con dinero en cuenta, tarjetas de débito o crédito y cuotas disponibles.</span></span>
+          </label>
+          <label className={`flex cursor-pointer gap-3 rounded-xl border p-4 transition ${data.paymentMethod === 'gocuotas' ? 'border-[#2581d2] bg-[#eaf4fd] ring-2 ring-[#2581d2]/20' : 'border-slate-200 hover:border-slate-300'}`}>
+            <input type="radio" name="paymentMethod" value="gocuotas" checked={data.paymentMethod === 'gocuotas'} onChange={() => setField('paymentMethod', 'gocuotas')} className="mt-1" />
+            <MessageCircle className="mt-0.5 size-5 shrink-0 text-[#1456a0]" aria-hidden="true" />
+            <span><strong className="block text-sm text-[#12355f]">GOcuotas · DEMO</strong><span className="mt-1 block text-xs leading-5 text-slate-600">Coordiná tu compra por WhatsApp. En este prototipo solo se prepara el mensaje: no abre una conversación real.</span></span>
+          </label>
+          {errors.paymentMethod && <p className="text-xs font-medium text-red-600">{errors.paymentMethod}</p>}
+        </fieldset>
 
         <p className="text-xs text-slate-400">Los beneficios correspondientes se verificarán al confirmar el pedido.</p>
 
