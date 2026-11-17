@@ -1,49 +1,86 @@
-import {
-  deliveryZoneForNeighborhood,
-  OTHER_NEIGHBORHOOD,
-} from '@/lib/delivery-neighborhoods'
-import type { DeliveryZone } from '@/lib/delivery-neighborhoods'
+import { MARKET_CONFIG } from '@/lib/market-config'
 
-export type { DeliveryZone } from '@/lib/delivery-neighborhoods'
-
-export type PaymentMethod = 'mercado_pago' | 'gocuotas'
+export type DeliveryMethod = 'pickup' | 'north' | 'south'
 
 export type CheckoutData = {
   name: string
   phone: string
+  deliveryMethod: DeliveryMethod | ''
   address: string
-  barrio: string
-  zone: DeliveryZone | ''
   reference: string
   observations: string
-  paymentMethod: PaymentMethod | ''
 }
 
 export const EMPTY_CHECKOUT: CheckoutData = {
   name: '',
   phone: '',
+  deliveryMethod: '',
   address: '',
-  barrio: '',
-  zone: '',
   reference: '',
   observations: '',
-  paymentMethod: '',
 }
 
-export const DELIVERY_MINIMUM: Record<DeliveryZone, number> = {
-  Norte: 40000,
-  Sur: 60000,
-}
+export const DELIVERY_OPTIONS: ReadonlyArray<{
+  value: DeliveryMethod
+  title: string
+  description: string
+}> = [
+  {
+    value: 'pickup',
+    title: 'Retiro en el local',
+    description: 'Retirá tu pedido directamente en Market Mutual. Sin compra mínima.',
+  },
+  {
+    value: 'north',
+    title: 'Envío a domicilio — Zona Norte',
+    description: 'Recibí tu pedido en Zona Norte. Compra mínima requerida.',
+  },
+  {
+    value: 'south',
+    title: 'Envío a domicilio — Zona Sur',
+    description: 'Recibí tu pedido en Zona Sur. Compra mínima requerida.',
+  },
+]
 
-export type CheckoutField = 'name' | 'phone' | 'address' | 'barrio' | 'zone' | 'paymentMethod'
-
+export type CheckoutField = 'name' | 'phone' | 'deliveryMethod' | 'address'
 export type CheckoutErrors = Partial<Record<CheckoutField, string>>
+
+export function isHomeDelivery(method: CheckoutData['deliveryMethod']): method is 'north' | 'south' {
+  return method === 'north' || method === 'south'
+}
+
+export function deliveryMethodLabel(method: DeliveryMethod): string {
+  if (method === 'pickup') return 'Retiro en el local'
+  return method === 'north' ? 'Envío a domicilio — Zona Norte' : 'Envío a domicilio — Zona Sur'
+}
+
+export function deliveryZoneLabel(method: DeliveryMethod): string {
+  if (method === 'pickup') return 'Retiro en el local'
+  return method === 'north' ? 'Norte' : 'Sur'
+}
+
+export function deliveryMinimum(method: CheckoutData['deliveryMethod']): number | null {
+  if (method === 'north') return MARKET_CONFIG.deliveryMinimums.north
+  if (method === 'south') return MARKET_CONFIG.deliveryMinimums.south
+  return null
+}
+
+export function deliveryCost(method: CheckoutData['deliveryMethod']): number | null {
+  if (method === 'north') return MARKET_CONFIG.deliveryCosts.north
+  if (method === 'south') return MARKET_CONFIG.deliveryCosts.south
+  return null
+}
+
+export function missingToMinimum(method: CheckoutData['deliveryMethod'], subtotal: number): number {
+  const minimum = deliveryMinimum(method)
+  return minimum === null ? 0 : Math.max(0, minimum - subtotal)
+}
 
 export function validateCheckout(data: CheckoutData): CheckoutErrors {
   const errors: CheckoutErrors = {}
 
-  if (!data.name.trim()) {
-    errors.name = 'El nombre y apellido son obligatorios.'
+  if (data.name.trim().split(/\s+/).filter(Boolean).length < 2) {
+    errors.name = 'Ingresá tu nombre y apellido.'
   }
 
   const phoneDigits = data.phone.replace(/\D/g, '')
@@ -53,23 +90,12 @@ export function validateCheckout(data: CheckoutData): CheckoutErrors {
     errors.phone = 'Ingresá un teléfono válido.'
   }
 
-  if (!data.address.trim()) {
-    errors.address = 'La dirección es obligatoria.'
+  if (!data.deliveryMethod) {
+    errors.deliveryMethod = 'Seleccioná cómo querés recibir tu pedido.'
   }
 
-  if (!data.barrio.trim()) {
-    errors.barrio = 'El barrio es obligatorio.'
-  }
-
-  const derivedZone = deliveryZoneForNeighborhood(data.barrio)
-  if (data.barrio === OTHER_NEIGHBORHOOD) {
-    errors.zone = 'Consultanos para confirmar la zona y el mínimo de envío.'
-  } else if (!derivedZone || data.zone !== derivedZone) {
-    errors.zone = 'Seleccioná un barrio disponible para determinar la zona de entrega.'
-  }
-
-  if (!data.paymentMethod) {
-    errors.paymentMethod = 'Elegí cómo querés continuar con el pago demo.'
+  if (isHomeDelivery(data.deliveryMethod) && !data.address.trim()) {
+    errors.address = 'La dirección es obligatoria para envíos a domicilio.'
   }
 
   return errors
@@ -79,10 +105,7 @@ export function isCheckoutValid(data: CheckoutData): boolean {
   return Object.keys(validateCheckout(data)).length === 0
 }
 
-export function deliveryMinimum(zone: DeliveryZone): number {
-  return DELIVERY_MINIMUM[zone]
-}
-
-export function missingToMinimum(zone: DeliveryZone, subtotal: number): number {
-  return Math.max(0, DELIVERY_MINIMUM[zone] - subtotal)
+export function canSubmitCheckout(data: CheckoutData, subtotal: number, cartCount: number): boolean {
+  if (cartCount <= 0 || subtotal <= 0 || !isCheckoutValid(data)) return false
+  return missingToMinimum(data.deliveryMethod, subtotal) === 0
 }

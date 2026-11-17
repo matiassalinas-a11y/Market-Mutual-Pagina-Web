@@ -221,3 +221,31 @@
     scrollbar-width: auto;
   }
 }
+
+@keyframes benefit-logo-marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.benefit-logo-track {
+  animation: benefit-logo-marquee var(--benefit-marquee-duration, 34s) linear infinite;
+  will-change: transform;
+}
+
+.benefit-logo-viewport:hover .benefit-logo-track,
+.benefit-logo-viewport:focus-within .benefit-logo-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .benefit-logo-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .benefit-logo-copy {
+    display: none;
+  }
+}

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { BrandLogo } from '@/components/market/brand-logo'
-import { Menu, Search, Settings, ShoppingBag, X } from 'lucide-react'
+import { Menu, Search, Settings, ShoppingCart, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 type HeaderProps = {
@@ -42,7 +42,18 @@ export function Header({
           <div className="ml-auto flex items-center gap-2">
             <div className="hidden h-11 w-[min(24vw,320px)] items-center gap-2 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:flex"><Search className="size-4 text-[#4e7196]" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="Buscar productos" aria-label="Buscar productos" /></div>
             <Link href="/admin" className="hidden size-11 items-center justify-center rounded-2xl text-[#12355f] transition hover:bg-[#edf6fd] md:flex" aria-label="Abrir administración demo"><Settings className="size-4" /></Link>
-            <Button variant="ghost" size="icon" className="relative size-11 rounded-2xl bg-[#edf6fd] text-[#1456a0] hover:bg-[#dceefe]" onClick={onOpenCart} aria-label={cartReady ? `Abrir carrito, ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}` : 'Abrir carrito'}><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#1456a0] text-[10px] font-bold text-white ring-2 ring-white">{cartCount}</span>}</Button>
+            <Button
+              variant="ghost"
+              className="group relative h-12 min-w-[124px] justify-start gap-2.5 rounded-[18px] border-2 border-[#1456a0] bg-[#fff8f1] px-3 text-[#12355f] shadow-[0_5px_14px_rgba(20,86,160,0.12)] transition duration-200 hover:-translate-y-0.5 hover:border-[#0f4a8c] hover:bg-white hover:text-[#1456a0] hover:shadow-[0_8px_18px_rgba(20,86,160,0.2)] focus-visible:ring-[#7db7ed]"
+              onClick={onOpenCart}
+              aria-label={cartReady ? `Abrir carrito, ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}` : 'Abrir carrito'}
+            >
+              <span className="relative flex size-7 shrink-0 items-center justify-center">
+                <ShoppingCart className="size-6 stroke-[1.8] text-[#7890ad]" />
+                {cartReady && cartCount > 0 && <span className="absolute -right-2 -top-2 flex min-w-5 items-center justify-center rounded-full bg-[#1456a0] px-1.5 py-0.5 text-[10px] font-extrabold leading-4 text-white ring-2 ring-white">{cartCount}</span>}
+              </span>
+              <span className="text-sm font-extrabold leading-none">Tu carrito</span>
+            </Button>
             <Button variant="ghost" size="icon" className="size-11 rounded-2xl lg:hidden" onClick={onToggleMenu} aria-label="Abrir menú">{menuOpen ? <X /> : <Menu />}</Button>
           </div>
           <label className="order-3 flex h-11 w-full items-center gap-3 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:hidden"><Search className="size-4 text-[#4e7196]" /><span className="sr-only">Buscar productos</span><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="¿Qué estás buscando?" /></label>

@@ -1,165 +1,201 @@
 'use client'
 
-import { useState } from 'react'
-import { CreditCard, MessageCircle } from 'lucide-react'
+import { useMemo, useRef, useState } from 'react'
+import { MapPin, MessageCircle, Store, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useCart } from '@/components/market/cart-store'
-import { NeighborhoodCombobox } from '@/components/market/neighborhood-combobox'
 import {
+  canSubmitCheckout,
+  DELIVERY_OPTIONS,
   deliveryMinimum,
+  deliveryZoneLabel,
   EMPTY_CHECKOUT,
-  isCheckoutValid,
+  isHomeDelivery,
   missingToMinimum,
   validateCheckout,
 } from '@/lib/checkout'
-import type { CheckoutData, CheckoutErrors, CheckoutField } from '@/lib/checkout'
-import {
-  findNeighborhood,
-  OTHER_NEIGHBORHOOD,
-} from '@/lib/delivery-neighborhoods'
+import type { CheckoutData, CheckoutErrors, CheckoutField, DeliveryMethod } from '@/lib/checkout'
+import { MARKET_CONFIG } from '@/lib/market-config'
+import { buildWhatsAppOrderMessage, buildWhatsAppUrl, generateOrderNumber } from '@/lib/order'
 import { formatMoney } from '@/lib/utils'
 
-type CheckoutFormProps = {
-  onReview: (data: CheckoutData) => void
-}
-
 const inputClass =
-  'h-11 w-full rounded-xl border bg-white px-3 text-sm text-[#16385f] outline-none transition focus:border-[#1456a0] focus:ring-2 focus:ring-[#1456a0]/25'
+  'h-12 w-full rounded-xl border border-slate-200 bg-white px-3.5 text-sm text-[#16385f] outline-none transition placeholder:text-slate-400 focus:border-[#1456a0] focus:ring-2 focus:ring-[#1456a0]/20'
 
 const labelClass = 'text-sm font-semibold text-[#12355f]'
 
-const ERROR_FIELDS: readonly CheckoutField[] = ['name', 'phone', 'address', 'barrio', 'zone', 'paymentMethod']
+const deliveryIcons = {
+  pickup: Store,
+  north: Truck,
+  south: MapPin,
+} satisfies Record<DeliveryMethod, typeof Store>
 
-function isErrorField(field: string): field is CheckoutField {
-  return ERROR_FIELDS.some((errorField) => errorField === field)
-}
-
-export function CheckoutForm({ onReview }: CheckoutFormProps) {
-  const { subtotal } = useCart()
+export function CheckoutForm() {
+  const { cart, cartItems, cartCount, subtotal } = useCart()
   const [data, setData] = useState<CheckoutData>(EMPTY_CHECKOUT)
   const [errors, setErrors] = useState<CheckoutErrors>({})
+  const [touched, setTouched] = useState<Partial<Record<CheckoutField, boolean>>>({})
+  const [submitMessage, setSubmitMessage] = useState('')
+  const orderNumber = useRef<string | null>(null)
 
-  const selectedNeighborhood = findNeighborhood(data.barrio)
-  const zone = selectedNeighborhood?.zone ?? ''
-  const needsZoneConfirmation = data.barrio === OTHER_NEIGHBORHOOD
-  const belowMinimum = zone !== '' && subtotal < deliveryMinimum(zone)
-  const amountMissing = zone !== '' ? missingToMinimum(zone, subtotal) : 0
-  const canReview = subtotal > 0 && !belowMinimum && isCheckoutValid(data)
+  const currentErrors = useMemo(() => validateCheckout(data), [data])
+  const minimum = deliveryMinimum(data.deliveryMethod)
+  const amountMissing = missingToMinimum(data.deliveryMethod, subtotal)
+  const belowMinimum = minimum !== null && amountMissing > 0
+  const canSubmit = canSubmitCheckout(data, subtotal, cartCount)
+
+  const visibleError = (field: CheckoutField) => errors[field] ?? (touched[field] ? currentErrors[field] : undefined)
 
   const setField = <K extends keyof CheckoutData>(field: K, value: CheckoutData[K]) => {
     setData((current) => ({ ...current, [field]: value }))
-    const errorField = isErrorField(field) ? field : null
-    if (errorField && errors[errorField]) {
+    setSubmitMessage('')
+    if (field in errors) {
       setErrors((current) => {
         const next = { ...current }
-        delete next[errorField]
+        delete next[field as CheckoutField]
         return next
       })
     }
   }
 
-  const selectNeighborhood = (barrio: string) => {
-    const neighborhood = findNeighborhood(barrio)
-    setData((current) => ({
-      ...current,
-      barrio,
-      zone: neighborhood?.zone ?? '',
-    }))
-    setErrors((current) => {
-      const next = { ...current }
-      delete next.barrio
-      delete next.zone
-      return next
-    })
+  const markTouched = (field: CheckoutField) => {
+    setTouched((current) => ({ ...current, [field]: true }))
   }
 
-  const handleReview = () => {
+  const selectDelivery = (deliveryMethod: DeliveryMethod) => {
+    setData((current) => ({
+      ...current,
+      deliveryMethod,
+      address: deliveryMethod === 'pickup' ? '' : current.address,
+      reference: deliveryMethod === 'pickup' ? '' : current.reference,
+    }))
+    setTouched((current) => ({ ...current, deliveryMethod: true }))
+    setErrors((current) => {
+      const next = { ...current }
+      delete next.deliveryMethod
+      delete next.address
+      return next
+    })
+    setSubmitMessage('')
+  }
+
+  const handleSend = () => {
     const nextErrors = validateCheckout(data)
     setErrors(nextErrors)
-    if (Object.keys(nextErrors).length === 0 && !belowMinimum) {
-      onReview(data)
+    setTouched({ name: true, phone: true, deliveryMethod: true, address: true })
+
+    if (Object.keys(nextErrors).length > 0 || !canSubmitCheckout(data, subtotal, cartCount)) {
+      setSubmitMessage(belowMinimum
+        ? 'El pedido todavía no alcanza el mínimo requerido para esta zona.'
+        : 'Revisá los datos obligatorios antes de continuar.')
+      return
     }
+
+    const whatsappNumber = MARKET_CONFIG.whatsappNumber.replace(/\D/g, '')
+    if (!whatsappNumber) {
+      setSubmitMessage('Falta configurar el número oficial de WhatsApp de Market Mutual.')
+      return
+    }
+
+    if (!orderNumber.current) orderNumber.current = generateOrderNumber()
+    const items = cartItems.map((product) => ({ product, quantity: cart[product.id] }))
+    const message = buildWhatsAppOrderMessage({
+      orderNumber: orderNumber.current,
+      data,
+      items,
+      subtotal,
+    })
+    const url = buildWhatsAppUrl(whatsappNumber, message)
+    window.open(url, '_blank', 'noopener,noreferrer')
+    setSubmitMessage('WhatsApp se abrió en una nueva pestaña. Tu carrito permanece guardado.')
   }
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
-      <div className="mb-6"><p className="text-xs font-bold uppercase tracking-widest text-[#2581d2]">Checkout</p><h2 className="mt-1 text-xl font-bold text-[#12355f]">Completá tus datos</h2></div>
+    <section className="rounded-3xl border border-[#dce8f3] bg-white p-5 shadow-[0_18px_55px_rgba(18,53,95,0.07)] sm:p-7">
+      <div className="mb-7">
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2581d2]">Finalizá tu pedido</p>
+        <h1 className="mt-2 text-2xl font-black tracking-tight text-[#12355f]">Datos de contacto y entrega</h1>
+        <p className="mt-2 text-sm leading-6 text-slate-500">Completá tus datos. El pago y la disponibilidad se coordinan con Market Mutual por WhatsApp.</p>
+      </div>
 
-      <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-1.5">
           <label htmlFor="checkout-name" className={labelClass}>Nombre y apellido <span className="text-red-600">*</span></label>
-          <input id="checkout-name" value={data.name} onChange={(event) => setField('name', event.target.value)} className={inputClass} placeholder="Juan Pérez" autoComplete="name" />
-          {errors.name && <p className="text-xs font-medium text-red-600">{errors.name}</p>}
+          <input id="checkout-name" value={data.name} onChange={(event) => setField('name', event.target.value)} onBlur={() => markTouched('name')} className={inputClass} placeholder="Juan Pérez" autoComplete="name" aria-invalid={Boolean(visibleError('name'))} />
+          {visibleError('name') && <p className="text-xs font-medium text-red-600">{visibleError('name')}</p>}
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1.5">
           <label htmlFor="checkout-phone" className={labelClass}>Teléfono <span className="text-red-600">*</span></label>
-          <input id="checkout-phone" value={data.phone} onChange={(event) => setField('phone', event.target.value)} className={inputClass} placeholder="11 2345 6789" type="tel" inputMode="tel" autoComplete="tel" />
-          {errors.phone && <p className="text-xs font-medium text-red-600">{errors.phone}</p>}
+          <input id="checkout-phone" value={data.phone} onChange={(event) => setField('phone', event.target.value)} onBlur={() => markTouched('phone')} className={inputClass} placeholder="297 412 3456" type="tel" inputMode="tel" autoComplete="tel" aria-invalid={Boolean(visibleError('phone'))} />
+          {visibleError('phone') && <p className="text-xs font-medium text-red-600">{visibleError('phone')}</p>}
         </div>
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="checkout-address" className={labelClass}>Dirección <span className="text-red-600">*</span></label>
-          <input id="checkout-address" value={data.address} onChange={(event) => setField('address', event.target.value)} className={inputClass} placeholder="Calle y número" autoComplete="street-address" />
-          {errors.address && <p className="text-xs font-medium text-red-600">{errors.address}</p>}
-        </div>
+        <fieldset className="flex flex-col gap-2.5">
+          <legend className={labelClass}>Modalidad de entrega <span className="text-red-600">*</span></legend>
+          <div className="grid gap-3">
+            {DELIVERY_OPTIONS.map((option) => {
+              const Icon = deliveryIcons[option.value]
+              const selected = data.deliveryMethod === option.value
+              return (
+                <label key={option.value} className={`flex cursor-pointer items-start gap-3 rounded-2xl border p-4 transition ${selected ? 'border-[#2581d2] bg-[#edf6fe] ring-2 ring-[#2581d2]/15' : 'border-slate-200 hover:border-[#9fc7e9] hover:bg-[#f8fbfe]'}`}>
+                  <input type="radio" name="deliveryMethod" value={option.value} checked={selected} onChange={() => selectDelivery(option.value)} className="sr-only" />
+                  <span className={`flex size-10 shrink-0 items-center justify-center rounded-xl ${selected ? 'bg-[#1456a0] text-white' : 'bg-[#eaf3fb] text-[#1456a0]'}`}><Icon className="size-5" aria-hidden="true" /></span>
+                  <span><strong className="block text-sm text-[#12355f]">{option.title}</strong><span className="mt-1 block text-xs leading-5 text-slate-500">{option.description}</span></span>
+                </label>
+              )
+            })}
+          </div>
+          {visibleError('deliveryMethod') && <p className="text-xs font-medium text-red-600">{visibleError('deliveryMethod')}</p>}
+        </fieldset>
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="checkout-barrio" className={labelClass}>Barrio <span className="text-red-600">*</span></label>
-          <NeighborhoodCombobox value={data.barrio} onChange={selectNeighborhood} hasError={Boolean(errors.barrio)} />
-          {errors.barrio && <p className="text-xs font-medium text-red-600">{errors.barrio}</p>}
-        </div>
+        {isHomeDelivery(data.deliveryMethod) && (
+          <>
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="checkout-address" className={labelClass}>Dirección (calle y número) <span className="text-red-600">*</span></label>
+              <input id="checkout-address" value={data.address} onChange={(event) => setField('address', event.target.value)} onBlur={() => markTouched('address')} className={inputClass} placeholder="Calle y número" autoComplete="street-address" aria-invalid={Boolean(visibleError('address'))} />
+              {visibleError('address') && <p className="text-xs font-medium text-red-600">{visibleError('address')}</p>}
+            </div>
 
-        {zone !== '' && (
-          <div className={`rounded-xl border px-3 py-3 text-sm ${belowMinimum ? 'border-red-200 bg-red-50 text-[#c02929]' : 'border-green-200 bg-green-50 text-[#2e8b5b]'}`}>
-            <p>Zona de entrega: <strong>{zone}</strong></p>
-            <p>Compra mínima para envío: <strong>{formatMoney(deliveryMinimum(zone))}</strong></p>
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="checkout-reference" className={labelClass}>Referencia del domicilio <span className="text-xs font-normal text-slate-400">(opcional)</span></label>
+              <input id="checkout-reference" value={data.reference} onChange={(event) => setField('reference', event.target.value)} className={inputClass} placeholder="Ej. casa con portón negro" />
+            </div>
+          </>
+        )}
+
+        {data.deliveryMethod === 'pickup' && (
+          <div className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800" role="status">
+            <strong>Sin compra mínima.</strong> Podés retirar tu pedido directamente en Market Mutual.
+          </div>
+        )}
+
+        {isHomeDelivery(data.deliveryMethod) && minimum !== null && (
+          <div className={`rounded-2xl border px-4 py-3 text-sm ${belowMinimum ? 'border-amber-300 bg-amber-50 text-amber-900' : 'border-emerald-200 bg-emerald-50 text-emerald-800'}`} role="status" aria-live="polite">
             {belowMinimum ? (
-              <p className="mt-1 text-xs">Te faltan <strong>{formatMoney(amountMissing)}</strong> para alcanzar el mínimo de envío.</p>
+              <p>Para envíos a Zona {deliveryZoneLabel(data.deliveryMethod)} necesitás una compra mínima de <strong>{formatMoney(minimum)}</strong>. Te faltan <strong>{formatMoney(amountMissing)}</strong> para completar tu pedido.</p>
             ) : (
-              <p className="mt-1 text-xs">✓ Cumplís el mínimo para tu zona.</p>
+              <p><strong>Ya alcanzaste la compra mínima de {formatMoney(minimum)}</strong> para Zona {deliveryZoneLabel(data.deliveryMethod)}.</p>
             )}
           </div>
         )}
 
-        {needsZoneConfirmation && (
-          <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-3 text-sm font-medium text-[#7a5900]" role="status">
-            Consultanos para confirmar la zona y el mínimo de envío.
-          </div>
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="checkout-observations" className={labelClass}>Observaciones del pedido <span className="text-xs font-normal text-slate-400">(opcional)</span></label>
+          <textarea id="checkout-observations" value={data.observations} onChange={(event) => setField('observations', event.target.value)} className="min-h-24 w-full resize-y rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm text-[#16385f] outline-none transition placeholder:text-slate-400 focus:border-[#1456a0] focus:ring-2 focus:ring-[#1456a0]/20" placeholder="Algún detalle sobre tu pedido..." rows={4} />
+        </div>
+
+        {!MARKET_CONFIG.whatsappNumber && (
+          <p className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-800">Pendiente: configurar el número oficial de WhatsApp de Market Mutual.</p>
         )}
-        {errors.zone && !needsZoneConfirmation && <p className="text-xs font-medium text-red-600">{errors.zone}</p>}
 
-        <div className="flex flex-col gap-1">
-          <label htmlFor="checkout-reference" className={labelClass}>Referencia del domicilio <span className="text-xs text-slate-400">(opcional)</span></label>
-          <input id="checkout-reference" value={data.reference} onChange={(event) => setField('reference', event.target.value)} className={inputClass} placeholder="Ej. casa verde, frente a la plaza" />
-        </div>
-
-        <div className="flex flex-col gap-1">
-          <label htmlFor="checkout-observations" className={labelClass}>Observaciones <span className="text-xs text-slate-400">(opcional)</span></label>
-          <textarea id="checkout-observations" value={data.observations} onChange={(event) => setField('observations', event.target.value)} className="min-h-20 w-full rounded-xl border bg-white px-3 py-2 text-sm text-[#16385f] outline-none transition focus:border-[#1456a0] focus:ring-2 focus:ring-[#1456a0]/25" placeholder="Algún detalle para la entrega..." rows={3} />
-        </div>
-
-        <fieldset className="flex flex-col gap-2">
-          <legend className={labelClass}>Forma de pago <span className="text-red-600">*</span></legend>
-          <p className="text-xs text-slate-500">Simulación para presentación: no se procesa ningún pago real.</p>
-          <label className={`flex cursor-pointer gap-3 rounded-xl border p-4 transition ${data.paymentMethod === 'mercado_pago' ? 'border-[#2581d2] bg-[#eaf4fd] ring-2 ring-[#2581d2]/20' : 'border-slate-200 hover:border-slate-300'}`}>
-            <input type="radio" name="paymentMethod" value="mercado_pago" checked={data.paymentMethod === 'mercado_pago'} onChange={() => setField('paymentMethod', 'mercado_pago')} className="mt-1" />
-            <CreditCard className="mt-0.5 size-5 shrink-0 text-[#1456a0]" aria-hidden="true" />
-            <span><strong className="block text-sm text-[#12355f]">Mercado Pago · DEMO</strong><span className="mt-1 block text-xs leading-5 text-slate-600">Pagá online con dinero en cuenta, tarjetas de débito o crédito y cuotas disponibles.</span></span>
-          </label>
-          <label className={`flex cursor-pointer gap-3 rounded-xl border p-4 transition ${data.paymentMethod === 'gocuotas' ? 'border-[#2581d2] bg-[#eaf4fd] ring-2 ring-[#2581d2]/20' : 'border-slate-200 hover:border-slate-300'}`}>
-            <input type="radio" name="paymentMethod" value="gocuotas" checked={data.paymentMethod === 'gocuotas'} onChange={() => setField('paymentMethod', 'gocuotas')} className="mt-1" />
-            <MessageCircle className="mt-0.5 size-5 shrink-0 text-[#1456a0]" aria-hidden="true" />
-            <span><strong className="block text-sm text-[#12355f]">GOcuotas · DEMO</strong><span className="mt-1 block text-xs leading-5 text-slate-600">Coordiná tu compra por WhatsApp. En este prototipo solo se prepara el mensaje: no abre una conversación real.</span></span>
-          </label>
-          {errors.paymentMethod && <p className="text-xs font-medium text-red-600">{errors.paymentMethod}</p>}
-        </fieldset>
-
-        <p className="text-xs text-slate-400">Los beneficios correspondientes se verificarán al confirmar el pedido.</p>
-
-        <Button className="w-full rounded-xl bg-[#1456a0] px-6 py-3.5 hover:bg-[#0d4381]" disabled={!canReview} onClick={handleReview}>
-          Revisar pedido
+        <Button className="h-13 w-full rounded-xl bg-[#1456a0] px-6 text-sm font-bold hover:bg-[#0d4381] disabled:cursor-not-allowed disabled:bg-[#9db4cb] disabled:text-white" disabled={!canSubmit} onClick={handleSend}>
+          <MessageCircle className="size-5" aria-hidden="true" />
+          Enviar pedido por WhatsApp
         </Button>
+
+        <p className="text-center text-xs leading-5 text-slate-400">El carrito no se vacía al abrir WhatsApp. El pedido queda sujeto a confirmación de disponibilidad.</p>
+        {submitMessage && <p className="text-center text-sm font-semibold text-[#9a6200]" role="status" aria-live="polite">{submitMessage}</p>}
       </div>
     </section>
   )

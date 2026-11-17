@@ -8,18 +8,12 @@ import { Button } from '@/components/ui/button'
 import { CartDrawer } from '@/components/market/cart-drawer'
 import { CheckoutForm } from '@/components/market/checkout-form'
 import { Footer } from '@/components/market/footer'
-import { OrderReview } from '@/components/market/order-review'
 import { OrderSummary } from '@/components/market/order-summary'
 import { useCart } from '@/components/market/cart-store'
-import { generateOrderNumber } from '@/lib/order'
-import type { CheckoutData } from '@/lib/checkout'
 
 export default function CheckoutPage() {
   const { ready, cartCount } = useCart()
   const [cartOpen, setCartOpen] = useState(false)
-  const [reviewOpen, setReviewOpen] = useState(false)
-  const [reviewData, setReviewData] = useState<CheckoutData | null>(null)
-  const [orderNumber, setOrderNumber] = useState<string | null>(null)
 
   if (!ready) {
     return (
@@ -27,14 +21,6 @@ export default function CheckoutPage() {
         <p className="text-sm text-slate-500">Cargando tu pedido…</p>
       </main>
     )
-  }
-
-  const handleReview = (data: CheckoutData) => {
-    // El número de pedido se genera al entrar a la revisión por primera vez y
-    // se mantiene estable mientras no se reinicie el flujo (ej. salir del checkout).
-    if (!orderNumber) setOrderNumber(generateOrderNumber())
-    setReviewData(data)
-    setReviewOpen(true)
   }
 
   return (
@@ -51,10 +37,6 @@ export default function CheckoutPage() {
         </div>
       </header>
 
-      <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-center text-xs font-bold text-amber-800">
-        CHECKOUT DEMO · No se procesan pagos ni se envían mensajes reales.
-      </div>
-
       {cartCount === 0 ? (
         <section className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center lg:px-8">
           <span className="flex size-16 items-center justify-center rounded-2xl bg-[#e7f2fc] text-[#1456a0]"><ShoppingBag /></span>
@@ -64,14 +46,13 @@ export default function CheckoutPage() {
         </section>
       ) : (
         <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-2 lg:px-8">
-          <CheckoutForm onReview={handleReview} />
+          <CheckoutForm />
           <OrderSummary />
         </section>
       )}
 
       <Footer />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
-      {reviewOpen && reviewData && orderNumber && <OrderReview orderNumber={orderNumber} data={reviewData} onEdit={() => setReviewOpen(false)} />}
     </main>
   )
 }

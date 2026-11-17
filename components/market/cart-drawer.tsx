@@ -15,17 +15,26 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
   const router = useRouter()
   const { cart, cartItems, cartCount, subtotal, cartNotice, clearCartNotice, updateQuantity, removeFromCart } = useCart()
 
-  if (!open) return null
-
   const goToCheckout = () => {
     onClose()
     router.push('/checkout')
   }
 
   return (
-    <div className="fixed inset-0 z-50">
-      <button className="absolute inset-0 bg-[#061a30]/40 backdrop-blur-sm" onClick={onClose} aria-label="Cerrar carrito" />
-      <aside className="absolute right-0 top-0 flex h-full w-full max-w-md flex-col bg-white p-5 shadow-2xl">
+    <div
+      className={`fixed inset-0 z-50 transition-[visibility] duration-300 motion-reduce:transition-none ${open ? 'visible' : 'invisible delay-300'}`}
+      aria-hidden={!open}
+      inert={!open}
+    >
+      <button
+        className={`absolute inset-0 bg-[#061a30]/40 backdrop-blur-sm transition-opacity duration-300 ease-out motion-reduce:transition-none ${open ? 'opacity-100' : 'pointer-events-none opacity-0'}`}
+        onClick={onClose}
+        aria-label="Cerrar carrito"
+      />
+      <aside
+        className={`absolute right-0 top-0 flex h-full w-full max-w-md flex-col bg-white p-5 shadow-2xl transition-transform duration-[360ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${open ? 'translate-x-0' : 'translate-x-full'}`}
+        aria-label="Carrito de compras"
+      >
         <div className="flex items-center justify-between border-b border-slate-200 pb-5">
           <div><p className="text-xs font-bold uppercase tracking-widest text-[#2581d2]">Tu pedido</p><h2 className="mt-1 text-xl font-bold text-[#12355f]">Carrito <span className="text-slate-400">({cartCount})</span></h2></div>
           <Button variant="ghost" size="icon" onClick={onClose} aria-label="Cerrar carrito"><X /></Button>

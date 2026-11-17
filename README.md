@@ -17,7 +17,7 @@ Abrí [http://localhost:3000](http://localhost:3000).
 
 - `/`: catálogo, categorías, búsqueda, carrito y acceso al checkout.
 - `/admin`: panel de demostración para importar `.xlsx` o `.csv`, revisar filas y reemplazar el catálogo guardado en este navegador.
-- `/checkout`: datos de entrega y elección entre Mercado Pago demo o GOcuotas demo.
+- `/checkout`: datos de contacto, modalidad de entrega y envío del pedido por WhatsApp.
 - `/checkout/demo/mercado-pago`: simulador local de estados aprobado, pendiente y rechazado.
 
 El importador detecta automáticamente las columnas habituales del archivo de productos. Antes de confirmar permite cambiar la correspondencia de columnas, ver una muestra, consultar filas válidas/duplicadas/inválidas y descargar un informe CSV. El catálogo se guarda en IndexedDB; el carrito se guarda en localStorage.
@@ -51,7 +51,7 @@ Las 4 coincidencias dudosas y 2 discrepancias se dejaron fuera. Open Food Facts 
 - No hay backend, Supabase, autenticación ni permisos reales.
 - El panel `/admin` es público y está marcado como DEMO.
 - No se procesan pagos ni se solicitan credenciales bancarias.
-- GOcuotas solo genera una vista previa copiable; no abre WhatsApp.
+- El checkout genera un ticket completo para WhatsApp y conserva el carrito al abrirlo.
 - Los números de pedido son referencias locales sin validez transaccional.
 - Las imágenes faltantes o inválidas usan un reemplazo visual local. No se realizan búsquedas ni descargas masivas automáticas.
 - Las asociaciones de fotografías aprobadas son específicas del navegador; no se sincronizan entre equipos ni se copian al proyecto.

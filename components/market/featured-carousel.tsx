@@ -15,13 +15,11 @@ type FlyerCarouselProps = {
 
 export function FeaturedCarousel({ flyers = featuredFlyers, title = 'Destacados', description, id, aspectRatio = '16 / 9' }: FlyerCarouselProps = {}) {
   const [active, setActive] = useState(0)
-  const [hovered, setHovered] = useState(false)
-  const [focused, setFocused] = useState(false)
-  const [reducedMotion, setReducedMotion] = useState(true)
+  const [reducedMotion, setReducedMotion] = useState(false)
   const [visible, setVisible] = useState(true)
   const touchStart = useRef<{ x: number; y: number } | null>(null)
   const count = flyers.length
-  const rotating = count > 1 && !hovered && !focused && !reducedMotion && visible
+  const rotating = count > 1 && !reducedMotion && visible
 
   useEffect(() => {
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -39,18 +37,16 @@ export function FeaturedCarousel({ flyers = featuredFlyers, title = 'Destacados'
 
   useEffect(() => {
     if (!rotating) return
-    const timer = window.setTimeout(() => setActive(current => (current + 1) % count), 3000)
-    return () => window.clearTimeout(timer)
-  }, [active, count, rotating])
+    const timer = window.setInterval(() => setActive(current => (current + 1) % count), 3000)
+    return () => window.clearInterval(timer)
+  }, [count, rotating])
 
   if (!count) return null
 
   const move = (direction: number) => setActive(current => (current + direction + count) % count)
 
   return (
-    <section id={id} className="mx-auto max-w-7xl scroll-mt-36 px-4 pb-2 pt-5 lg:px-8" aria-label={`${title} Market Mutual`} aria-roledescription="carrusel"
-      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false) }}>
+    <section id={id} className="mx-auto max-w-7xl scroll-mt-36 px-4 pb-2 pt-5 lg:px-8" aria-label={`${title} Market Mutual`} aria-roledescription="carrusel">
       <div className="mx-auto mb-4 md:max-w-[640px]">
         <h2 className="text-xl font-extrabold tracking-tight text-[#102f53] sm:text-2xl">{title}</h2>
         {description && <p className="mt-3 text-base leading-7 text-slate-600">{description}</p>}
