@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { BrandLogo } from '@/components/market/brand-logo'
-import { Clock3, MapPin, Menu, Search, Settings, ShoppingBag, X } from 'lucide-react'
+import { Menu, Search, Settings, ShoppingBag, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 type HeaderProps = {
@@ -29,10 +29,7 @@ export function Header({
   return (
     <>
       <div className="bg-[#0d2d55] px-4 py-2 text-[11px] font-semibold text-white/90 sm:text-xs">
-        <div className="mx-auto flex max-w-7xl items-center justify-center gap-4 sm:justify-between">
-          <span className="hidden items-center gap-2 sm:flex"><MapPin className="size-3.5" /> Entregas en zonas norte y sur</span>
-          <span className="flex items-center gap-2"><Clock3 className="size-3.5" /> Horario de entrega: 09:00 a 16:30</span>
-        </div>
+        <p className="mx-auto max-w-7xl text-center text-balance leading-5">Mutual de los Trabajadores de la Construcción de la Patagonia - Conducción Raúl Silva</p>
       </div>
       <header className="sticky top-0 z-30 border-b border-[#dceaf7] bg-white/95 shadow-[0_8px_30px_rgba(18,53,95,0.06)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 lg:flex-nowrap lg:px-8">
