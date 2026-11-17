@@ -63,7 +63,7 @@ export function CartDrawer({ open, onClose }: CartDrawerProps) {
           <div className="border-t border-slate-200 pt-5">
             <div className="flex items-center justify-between text-sm text-slate-500"><span>Subtotal</span><span className="text-2xl font-bold text-[#12355f]">{formatMoney(subtotal)}</span></div>
             <p className="mt-2 text-xs leading-5 text-slate-400">Los beneficios correspondientes se verificarán al confirmar el pedido.</p>
-            <Button className="mt-5 w-full rounded-xl bg-[#1456a0] py-6 hover:bg-[#0d4381]" onClick={goToCheckout}>Continuar pedido <ArrowRight data-icon="inline-end" /></Button>
+            <Button className="mt-5 w-full rounded-xl bg-[#1456a0] py-6 text-white hover:bg-[#0d4381] hover:text-white" onClick={goToCheckout}>Continuar pedido <ArrowRight data-icon="inline-end" /></Button>
           </div>
         )}
       </aside>

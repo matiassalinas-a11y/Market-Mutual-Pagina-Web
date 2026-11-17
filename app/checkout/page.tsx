@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { BrandLogo } from '@/components/market/brand-logo'
 import { ShoppingBag } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { CartDrawer } from '@/components/market/cart-drawer'
@@ -41,8 +42,7 @@ export default function CheckoutPage() {
       <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center gap-5 px-4 py-4 lg:px-8">
           <Link href="/#inicio" className="flex shrink-0 items-center gap-2.5" aria-label="Market Mutual inicio">
-            <span className="flex size-10 items-center justify-center rounded-xl bg-[#1456a0] text-white shadow-sm"><ShoppingBag /></span>
-            <span className="text-lg font-bold tracking-tight text-[#12355f]">Market <span className="text-[#2385d5]">Mutual</span></span>
+            <BrandLogo />
           </Link>
           <nav className="ml-auto flex items-center gap-2">
             <Link href="/" className="text-sm font-semibold text-slate-600 hover:text-[#1456a0]">← Volver a la tienda</Link>

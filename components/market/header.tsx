@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { BrandLogo } from '@/components/market/brand-logo'
 import { Clock3, MapPin, Menu, Search, Settings, ShoppingBag, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -36,16 +37,15 @@ export function Header({
       <header className="sticky top-0 z-30 border-b border-[#dceaf7] bg-white/95 shadow-[0_8px_30px_rgba(18,53,95,0.06)] backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-4 py-3 lg:flex-nowrap lg:px-8">
           <a href="#inicio" className="flex shrink-0 items-center gap-2.5" aria-label="Market Mutual inicio">
-            <span className="flex size-10 items-center justify-center rounded-[14px] bg-[#1456a0] text-white shadow-[0_8px_18px_rgba(20,86,160,0.25)]"><ShoppingBag className="size-5" /></span>
-            <span className="text-lg font-extrabold tracking-tight text-[#12355f]">Market <span className="text-[#2385d5]">Mutual</span></span>
+            <BrandLogo />
           </a>
-          <nav className="hidden items-center gap-5 text-sm font-semibold text-slate-600 lg:flex">
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-5 text-sm font-semibold text-slate-600 lg:flex">
             <a className="text-[#1456a0]" href="#inicio">Inicio</a><a href="#productos" className="hover:text-[#1456a0]">Productos</a><a href="#categorias" className="hover:text-[#1456a0]">Categorías</a>{hasOffers && <a href="#ofertas" className="hover:text-[#1456a0]">Ofertas</a>}<a href="#como-comprar" className="hover:text-[#1456a0]">Cómo comprar</a>
           </nav>
           <div className="ml-auto flex items-center gap-2">
             <div className="hidden h-11 w-[min(24vw,320px)] items-center gap-2 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:flex"><Search className="size-4 text-[#4e7196]" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="Buscar productos" aria-label="Buscar productos" /></div>
             <Link href="/admin" className="hidden size-11 items-center justify-center rounded-2xl text-[#12355f] transition hover:bg-[#edf6fd] md:flex" aria-label="Abrir administración demo"><Settings className="size-4" /></Link>
-            <Button variant="ghost" size="icon" className="relative size-11 rounded-2xl bg-[#edf6fd] text-[#1456a0] hover:bg-[#dceefe]" onClick={onOpenCart} aria-label="Abrir carrito"><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#1456a0] text-[10px] font-bold text-white ring-2 ring-white">{cartCount}</span>}</Button>
+            <Button variant="ghost" size="icon" className="relative size-11 rounded-2xl bg-[#edf6fd] text-[#1456a0] hover:bg-[#dceefe]" onClick={onOpenCart} aria-label={cartReady ? `Abrir carrito, ${cartCount} ${cartCount === 1 ? 'producto' : 'productos'}` : 'Abrir carrito'}><ShoppingBag />{cartReady && cartCount > 0 && <span className="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-[#1456a0] text-[10px] font-bold text-white ring-2 ring-white">{cartCount}</span>}</Button>
             <Button variant="ghost" size="icon" className="size-11 rounded-2xl lg:hidden" onClick={onToggleMenu} aria-label="Abrir menú">{menuOpen ? <X /> : <Menu />}</Button>
           </div>
           <label className="order-3 flex h-11 w-full items-center gap-3 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:hidden"><Search className="size-4 text-[#4e7196]" /><span className="sr-only">Buscar productos</span><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="¿Qué estás buscando?" /></label>

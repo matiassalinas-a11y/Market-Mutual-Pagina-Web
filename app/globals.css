@@ -174,3 +174,50 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Desplazamiento de categorías: pista celeste y control redondeado. */
+.category-scroll {
+  color-scheme: light;
+  scrollbar-width: thin;
+  scrollbar-color: #6f9fc9 #e1edf7;
+}
+
+@supports selector(::-webkit-scrollbar) {
+  .category-scroll {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  .category-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .category-scroll::-webkit-scrollbar-track {
+    background: #e1edf7;
+    border-radius: 999px;
+  }
+
+  .category-scroll::-webkit-scrollbar-thumb {
+    min-width: 48px;
+    background: #6f9fc9;
+    border: 2px solid #e1edf7;
+    border-radius: 999px;
+  }
+
+  .category-scroll::-webkit-scrollbar-thumb:hover {
+    background: #1456a0;
+  }
+
+  .category-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+@media (forced-colors: active) {
+  .category-scroll {
+    scrollbar-color: auto;
+    scrollbar-width: auto;
+  }
+}
