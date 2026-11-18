@@ -16,11 +16,11 @@ Abrí [http://localhost:3000](http://localhost:3000).
 ## Recorrido de la demo
 
 - `/`: catálogo, categorías, búsqueda, carrito y acceso al checkout.
-- `/admin`: panel de demostración para importar `.xlsx` o `.csv`, revisar filas y reemplazar el catálogo guardado en este navegador.
+- `/admin`: gestión de productos, fotos, precios y destacados para pruebas locales. La operación online está bloqueada hasta conectar base de datos y usuarios autorizados. Ver [guía de administración](docs/administracion.md).
 - `/checkout`: datos de contacto, modalidad de entrega y envío del pedido por WhatsApp.
 - `/checkout/demo/mercado-pago`: simulador local de estados aprobado, pendiente y rechazado.
 
-El importador detecta automáticamente las columnas habituales del archivo de productos. Antes de confirmar permite cambiar la correspondencia de columnas, ver una muestra, consultar filas válidas/duplicadas/inválidas y descargar un informe CSV. El catálogo se guarda en IndexedDB; el carrito se guarda en localStorage.
+El panel y la tienda consultan una API común. En desarrollo, los cambios se guardan en `.market-admin/`, fuera del catálogo original. Esta persistencia es solo para probar en esta PC; no sincroniza instalaciones entre computadoras. El carrito conserva su almacenamiento en localStorage. Las utilidades del importador anterior se conservan como referencia, pero IndexedDB ya no determina el catálogo de la tienda.
 
 ## Catálogo POSBerry incluido
 
@@ -32,9 +32,11 @@ Para preparar una futura actualización de stock sin depender del navegador:
 node scripts/build-posberry-catalog.mjs "ruta/productos.xlsx" "ruta/stock.xlsx" "public/data/catalog-posberry.json"
 ```
 
-El archivo generado se carga en IndexedDB la primera vez que se abre la tienda. Una importación manual que ya contenga stock utilizable se conserva hasta que se restaure el catálogo POSBerry desde `/admin`.
+El archivo generado y sus asociaciones de fotos son la semilla del repositorio del servidor. Los cambios administrativos de prueba se guardan aparte y no sobrescriben esa semilla. Para una prueba independiente, configurar `MARKET_ADMIN_DATA_DIR` como indica la guía de administración.
 
 ## Fotografías de productos
+
+Estado actual del catálogo conservado: **599 productos con foto local verificada y 154 pendientes**. Ver [revisión de imágenes](docs/imagenes-faltantes.md). Los siguientes párrafos documentan los primeros pilotos históricos, anteriores a la incorporación de los lotes actuales.
 
 El catálogo contiene 753 productos activos. El piloto inicial consultó 20 códigos: 9 devolvieron imágenes candidatas, ninguna se aprobó entonces y las 8 referencias preexistentes apuntan a miniaturas de Google sin procedencia/licencia trazable. Estas referencias siguen ocultas; el placeholder se mantiene para productos sin imagen verificada.
 
@@ -48,26 +50,38 @@ Las 4 coincidencias dudosas y 2 discrepancias se dejaron fuera. Open Food Facts 
 
 ## Límites deliberados del prototipo
 
-- No hay backend, Supabase, autenticación ni permisos reales.
-- El panel `/admin` es público y está marcado como DEMO.
+- Hay una API de catálogo y un repositorio de desarrollo, pero todavía no hay base de datos central, autenticación ni permisos del personal.
+- Las operaciones de `/admin` solo se permiten en desarrollo y localhost; están bloqueadas en producción. El panel indica claramente que no está habilitado online.
 - No se procesan pagos ni se solicitan credenciales bancarias.
 - El checkout genera un ticket completo para WhatsApp y conserva el carrito al abrirlo.
 - Los números de pedido son referencias locales sin validez transaccional.
 - Las imágenes faltantes o inválidas usan un reemplazo visual local. No se realizan búsquedas ni descargas masivas automáticas.
-- Las asociaciones de fotografías aprobadas son específicas del navegador; no se sincronizan entre equipos ni se copian al proyecto.
+- Las fotos aprobadas incluidas en el proyecto se conservan. Las nuevas fotos cargadas desde el panel de prueba se guardan en `.market-admin/uploads/`; requieren almacenamiento central antes de operar online.
 
-Para volver al catálogo ilustrativo inicial, usá **Borrar catálogo local** en `/admin`.
+El panel nuevo no incluye una acción para borrar el catálogo. Usá una carpeta de datos aislada para pruebas y conservá una copia de los datos locales que quieras retener.
 
 ## Verificación
 
 ```bash
 pnpm lint
 pnpm typecheck
+pnpm test:admin
 pnpm build
 ```
 
 La separación prevista para una futura implementación real está documentada en [`docs/prototype-architecture.md`](docs/prototype-architecture.md).
 # Sincronización de imágenes de productos
+
+Para buscar imágenes candidatas de los productos que aún no tienen foto, sin depender de los Excel originales, usá el [proceso de revisión de imágenes](docs/imagenes-faltantes.md):
+
+```powershell
+.\.venv\Scripts\python.exe scripts/imagenes_faltantes.py --auditar
+.\.venv\Scripts\python.exe scripts/imagenes_faltantes.py --descargar --salida .\revision_imagenes
+```
+
+El script diagnostica Carrefour, Día, Jumbo y La Anónima; conserva la búsqueda por EAN y agrega alternativas por nombre, marca, variante y presentación. Incluye EAN problemáticos, registra bloqueos y errores por separado y guarda los candidatos en `revision_imagenes/`, con galería e informes. No publica ni cambia asociaciones. El comando sin `--limite` procesa todos los faltantes.
+
+El flujo anterior para integrar imágenes ya aprobadas sigue disponible:
 
 Las imágenes se vinculan únicamente por EAN exacto. Si el catálogo web no trae EAN, el comando usa `catalogo_final.xlsx` como puente entre `codigo_interno` y `ean`; nunca compara nombres.
 

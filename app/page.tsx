@@ -8,6 +8,7 @@ import { Footer } from '@/components/market/footer'
 import { Header } from '@/components/market/header'
 import { Hero } from '@/components/market/hero'
 import { FeaturedCarousel } from '@/components/market/featured-carousel'
+import { FeaturedProducts } from '@/components/market/featured-products'
 import { HowToBuySection } from '@/components/market/how-to-buy-section'
 import { OffersSection } from '@/components/market/offers-section'
 import { PaymentMethodsSection } from '@/components/market/payment-methods-section'
@@ -20,7 +21,7 @@ import type { Product } from '@/lib/market-data'
 
 export default function Page() {
   const { cartCount, ready, addToCart } = useCart()
-  const { products, categories, source } = useCatalog()
+  const { products, flyers, categories, source, storageError, refreshCatalog, ready: catalogReady } = useCatalog()
   const [query, setQuery] = useState('')
   const [cartOpen, setCartOpen] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -69,7 +70,10 @@ export default function Page() {
       />
       {source === 'demo' && <p className="px-4 pt-4 text-center text-xs text-amber-800">Catálogo de demostración · Productos y precios ilustrativos.</p>}
       <Hero hasOffers={offerProducts.length > 0} />
-      <FeaturedCarousel />
+      <FeaturedCarousel key={flyers.map(flyer => flyer.id).join('|')} flyers={flyers} />
+      {storageError && <div role="alert" className="mx-auto max-w-7xl px-4 py-5 text-red-800">{storageError} <button className="underline" onClick={() => { void refreshCatalog().catch(() => {}) }}>Volver a intentar</button></div>}
+      {!catalogReady && <p role="status" className="px-4 py-8 text-center text-slate-600">Cargando productos…</p>}
+      <FeaturedProducts products={availableProducts.filter(p => p.featured).sort((a,b) => (a.featuredOrder ?? 0) - (b.featuredOrder ?? 0))} onAdd={handleAddToCart} />
       <OffersSection products={offerProducts} onAdd={handleAddToCart} />
       <ProductSection
         products={visibleProducts.slice(0, visibleCount)}

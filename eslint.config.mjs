@@ -8,6 +8,8 @@ export default defineConfig([
   ...nextTs,
   globalIgnores([
     '**/.next/**',
+    '**/.next-*/**',
+    '**/.market-admin/**',
     '**/node_modules/**',
     '**/public/**',
     '**/next-env.d.ts',

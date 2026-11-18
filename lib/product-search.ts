@@ -44,6 +44,6 @@ export function matchesProductSearch(product: Product, query: string): boolean {
     if (pastaFamily && /\b(accesorio|molde|moldes|dental|pastadental|mani|champu|shampoo|capilar)\b/.test(normalize(product.name))) return false
     return identity.some(word => candidates.some(candidate => word === candidate || (!family && candidate.length >= 3 && word.startsWith(candidate)) || closeSpelling(candidate, word)))
       || codes.some(code => code.includes(term))
-      || (!pastaFamily && category.some(word => candidates.some(candidate => word === candidate || (candidate.length >= 3 && word.startsWith(candidate)))))
+      || (!pastaFamily && category.some(word => candidates.some(candidate => word === candidate || (candidate.length >= 5 && word.startsWith(candidate)))))
   })
 }

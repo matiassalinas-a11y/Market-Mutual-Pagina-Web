@@ -41,7 +41,7 @@ export function Header({
           </nav>
           <div className="ml-auto flex items-center gap-2">
             <div className="hidden h-11 w-[min(24vw,320px)] items-center gap-2 rounded-2xl border border-[#dceaf7] bg-[#f3f8fd] px-4 md:flex"><Search className="size-4 text-[#4e7196]" /><input value={query} onChange={(event) => onQueryChange(event.target.value)} className="w-full bg-transparent text-sm outline-none placeholder:text-[#7f98b2]" placeholder="Buscar productos" aria-label="Buscar productos" /></div>
-            <Link href="/admin" className="hidden size-11 items-center justify-center rounded-2xl text-[#12355f] transition hover:bg-[#edf6fd] md:flex" aria-label="Abrir administración demo"><Settings className="size-4" /></Link>
+            <Link href="/admin" className="hidden size-11 items-center justify-center rounded-2xl text-[#12355f] transition hover:bg-[#edf6fd] md:flex" aria-label="Abrir administración"><Settings className="size-4" /></Link>
             <Button
               variant="ghost"
               className="group relative h-12 min-w-[124px] justify-start gap-2.5 rounded-[18px] border-2 border-[#1456a0] bg-[#fff8f1] px-3 text-[#12355f] shadow-[0_5px_14px_rgba(20,86,160,0.12)] transition duration-200 hover:-translate-y-0.5 hover:border-[#0f4a8c] hover:bg-white hover:text-[#1456a0] hover:shadow-[0_8px_18px_rgba(20,86,160,0.2)] focus-visible:ring-[#7db7ed]"

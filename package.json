@@ -9,8 +9,10 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test:admin": "node --test scripts/test-admin-catalog.cjs",
     "sync:product-images": "node scripts/sync-product-images.mjs",
-    "sync:benefit-logos": "node scripts/sync-benefit-logos.mjs"
+    "sync:benefit-logos": "node scripts/sync-benefit-logos.mjs",
+    "sync:product-families": "node scripts/sync-product-families.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",

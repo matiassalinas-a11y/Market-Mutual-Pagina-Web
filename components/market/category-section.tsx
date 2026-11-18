@@ -14,7 +14,7 @@ const visuals: [RegExp, string, string][] = [
   [/golosina|chocolate/i, '🍬', 'bg-[#fce8ef]'],
   [/sin alcohol/i, '🥤', 'bg-[#e6f2fc]'],
   [/alcohol/i, '🍷', 'bg-[#f5e6ed]'],
-  [/fruta|verdura/i, '🥦', 'bg-[#e7f4e5]'],
+  [/fruta|verdura|frutería|verdulería/i, '🥦', 'bg-[#e7f4e5]'],
   [/lácteo/i, '🥛', 'bg-[#e8f2fa]'],
   [/galletita/i, '🍪', 'bg-[#f8eddf]'],
   [/snack/i, '🍿', 'bg-[#fff5da]'],
@@ -30,6 +30,11 @@ const visuals: [RegExp, string, string][] = [
   [/electro/i, '🔌', 'bg-[#eaeafa]'],
   [/bazar/i, '🍽️', 'bg-[#e9f0f4]'],
   [/conserva/i, '🥫', 'bg-[#f8eae0]'],
+  [/papel/i, '🧻', 'bg-[#e9f2fa]'],
+  [/mascota/i, '🐾', 'bg-[#f4ecdf]'],
+  [/tecnología|informática/i, '💻', 'bg-[#eaeafa]'],
+  [/bebés/i, '🍼', 'bg-[#fce8ef]'],
+  [/tabaco|cigarrillo/i, '🚬', 'bg-[#edf1f6]'],
   [/almacén/i, '🛍️', 'bg-[#f4eddf]'],
 ]
 
@@ -37,14 +42,19 @@ const labels: Record<string, string> = {
   'Desayuno e infusiones': 'Desayuno', 'Golosinas y chocolates': 'Golosinas',
   'Bebidas sin alcohol': 'Bebidas', 'Higiene y cuidado personal': 'Cuidado personal',
   'Limpieza del hogar': 'Limpieza', 'Galletitas dulces y saladas': 'Galletitas',
-  'Arroz, legumbres y pastas': 'Arroz y pastas', 'Aceite, aderezos y vinagres': 'Aceites y aderezos',
+  'Arroz, legumbres y pastas': 'Arroz y pastas', 'Aceites, aderezos y vinagres': 'Aceites y aderezos',
+  'Caldos, condimentos y especias': 'Condimentos', 'Conservas y enlatados': 'Conservas',
+  'Frutería y verdulería': 'Frutas y verduras', 'Aceite, aderezos y vinagres': 'Aceites y aderezos',
 }
+
+// Categorías ocultas temporalmente en la navegación de la tienda.
+const hiddenCategories = new Set(['Fiambrería', 'Congelados', 'Mascotas'])
 
 export function CategorySection({ categories, selected, onSelect }: CategorySectionProps) {
   return (
     <div id="categorias" className="scroll-mt-36">
       <div className="category-scroll flex gap-3 overflow-x-auto px-1 pb-4 pt-1 sm:gap-5" role="group" aria-label="Filtrar por categoría">
-        {[{ name: 'Todos', count: 0 }, ...categories].map(category => {
+        {[{ name: 'Todos', count: 0 }, ...categories.filter(category => !hiddenCategories.has(category.name))].map(category => {
           const [, illustration, background] = visuals.find(([pattern]) => pattern.test(category.name)) ?? [null, '🛍️', 'bg-[#edf1f6]']
           const active = selected === category.name
           return (

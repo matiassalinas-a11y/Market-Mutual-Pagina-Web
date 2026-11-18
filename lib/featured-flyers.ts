@@ -7,7 +7,7 @@ export type FeaturedFlyer = {
   href?: string
 }
 
-// El primer flyer siempre es el de envíos. Agregar las promociones después.
+// Orden inicial del carrusel; los flyers pueden administrarse desde /admin.
 // Sin imagen se muestra el banner de envíos provisional.
 export const featuredFlyers: FeaturedFlyer[] = [
   { id: 'envios', title: 'Recibí tu pedido — Market Mutual. Envíos con compra mínima a zonas norte y sur, de 09:00 a 16:30', image: '/flyers/envios-market-mutual.png', href: '#entregas' },

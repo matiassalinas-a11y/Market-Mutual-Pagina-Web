@@ -52,7 +52,7 @@ type LocalProductImageManifest = {
     sku?: string
     barcode: string
     imageUrl: string
-    method: 'ean-catalog' | 'excel-bridge'
+    method: 'ean-catalog' | 'excel-bridge' | 'reviewed-candidate'
   }>
 }
 
@@ -81,7 +81,7 @@ export function isApprovedProductImage(product: Product): boolean {
   return Boolean(
     product.image
     && (
-      (product.imageSource === 'local-ean' && product.image.startsWith('/products/'))
+      (product.imageSource === 'local-ean' && (product.image.startsWith('/products/') || product.image.startsWith('/api/catalog/images/')))
       || (
         product.imageSource === 'open-food-facts'
         && product.imageCreditUrl

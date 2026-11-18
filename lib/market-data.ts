@@ -16,6 +16,8 @@ export type Product = {
   description?: string
   image?: string
   offer?: boolean
+  featured?: boolean
+  featuredOrder?: number
   discount?: string
   oldPrice?: number
   available: boolean

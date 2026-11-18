@@ -18,6 +18,11 @@ node_modules
 *.tsbuildinfo
 __pycache__/
 *.py[cod]
+.venv/
+/revision_imagenes/
+/.market-admin/
+/.next-*/
+/output/playwright/
 
 # Logs & temporary artifacts
 *.log
